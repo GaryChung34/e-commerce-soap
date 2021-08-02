@@ -1,0 +1,114 @@
+body {
+  font: 1rem Helvetica;
+  margin: 0;
+  height: 100vh;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 3rem 1fr 10rem;
+  height: 100%
+}
+
+.header {
+  grid-area: header;
+  background-color: PowderBlue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main {
+  grid-area: main;
+  border: 3px solid whitesmoke;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: PowderBlue
+}
+
+.brand a{
+  text-decoration: none;
+  color: White;
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+.header-link a{
+  text-decoration: none;
+  color: White;
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+
+.header-link a:hover{
+  color: SteelBlue;
+}
+
+.banner {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+  border: 3px solid whitesmoke;
+}
+
+.button-bar {
+  margin: auto;
+  border: 3px solid WhiteSmoke;
+  width: 80%;
+  text-align: center;
+}
+
+.all-products {
+  margin: auto;
+  border: 3px solid whitesmoke;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 10px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.blue-button {
+  background-color: gainsboro; 
+  color: white; 
+}
+
+.blue-button:hover {
+  background-color: PowderBlue;
+  color: white;
+}
+
+.product-image {
+  width: 15rem;
+  height: 25rem;
+  object-fit: cover;
+  padding: 1rem;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 3px solid whitesmoke;
+}
