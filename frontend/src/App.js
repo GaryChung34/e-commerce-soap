@@ -15,17 +15,23 @@ function App() {
       </header>
 
     <main className="main">
-      <img className="banner" src="images/logo-center.jpg" alt="logo-wide.jpg" />
-      <div className="button-bar">
+      <div className="center">
+        <img src="images/logo-center.jpg" alt="logo-wide.jpg" />
+      </div>
+      <div className="center">
         <button className="button blue-button">About us</button>
         <button className="button blue-button">Products</button>
         <button className="button blue-button">Gallery</button>
         <button className="button blue-button">Blog</button>
       </div>
 
-      <h1 className="all-products">
-        All Produsts
-      </h1>
+      <div className="center">
+        <img src="//placehold.it/1200x600" />
+      </div>
+
+      <div className="heading">
+        <h2>Favorites:</h2>
+      </div>
 
       <div className="all-products">
         <div className="product">

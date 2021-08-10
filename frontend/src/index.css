@@ -15,22 +15,14 @@ body {
   height: 100%
 }
 
+
+/* header */
 .header {
   grid-area: header;
   background-color: PowderBlue;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.main {
-  grid-area: main;
-  border: 3px solid whitesmoke;
-}
-
-.footer {
-  grid-area: footer;
-  background-color: PowderBlue
 }
 
 .brand a{
@@ -52,30 +44,63 @@ body {
   color: SteelBlue;
 }
 
-.banner {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 35%;
-  border: 3px solid whitesmoke;
+
+/* main */
+.main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1;
+  grid-gap: 3px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 3px;
+  background-color: whitesmoke;
 }
 
-.button-bar {
-  margin: auto;
-  border: 3px solid WhiteSmoke;
-  width: 80%;
-  text-align: center;
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
 }
 
+.heading {
+  padding-left: 2rem;
+  background-color: white;
+}
+
+
+/* product lists */
 .all-products {
-  margin: auto;
-  border: 3px solid whitesmoke;
-  width: 80%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: white;
 }
 
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid whitesmoke;
+}
+
+.product-image {
+  width: 15rem;
+  height: 25rem;
+  object-fit: cover;
+  padding: 1rem;
+}
+
+
+/* footer */
+.footer {
+  grid-area: footer;
+  background-color: PowderBlue
+}
+
+
+/* button */
 .button {
   border: none;
   color: white;
@@ -97,24 +122,4 @@ body {
 .blue-button:hover {
   background-color: PowderBlue;
   color: white;
-}
-
-.product-image {
-  width: 15rem;
-  height: 25rem;
-  object-fit: cover;
-  padding: 1rem;
-}
-
-.product {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 3px solid whitesmoke;
-}
-
-.all-products {
-  margin: auto;
-  width: 80%;
-  padding-left: 2rem;
 }
