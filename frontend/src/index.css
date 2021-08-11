@@ -57,6 +57,14 @@ body {
   background-color: whitesmoke;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 1;
+  grid-gap: 3px;
+  padding: 3px;
+  background-color: honeydew;
+}
+
 .center {
   display: flex;
   justify-content: center;
