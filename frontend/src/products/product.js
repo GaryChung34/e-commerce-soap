@@ -21,7 +21,8 @@ const Product = ({ product }) => {
 
   for (let x in product.ingredients) {
     ingredients.push(
-      <FontAwesomeIcon icon={faSeedling} />
+      <FontAwesomeIcon icon={faSeedling} />,
+      <span>{product.ingredients[x]}&nbsp;&nbsp;</span>
     )
   }
   
@@ -40,11 +41,7 @@ const Product = ({ product }) => {
         {product.price.discount}
       </div>
       <div style={{color:'lightgray'}}>
-
-        <FontAwesomeIcon icon={faSeedling} />
-        vanilla,&nbsp;
-        <FontAwesomeIcon style={{color:'lightgray'}} icon={faSeedling} />
-        basil
+        {ingredients}
       </div>
     </div>
 	)

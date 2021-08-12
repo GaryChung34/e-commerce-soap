@@ -51,8 +51,8 @@ body {
   display: grid;
   grid-template-columns: 1;
   grid-gap: 3px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
   padding: 3px;
   background-color: whitesmoke;
 }

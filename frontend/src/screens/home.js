@@ -4,14 +4,37 @@ import { faStar, faSeedling } from '@fortawesome/free-solid-svg-icons'
 
 import Product from '../products/product.js'
 
+const p0 = {
+  name: "Earthy Blend", 
+  star: 4,
+  image: "images/soap1.jpg",
+  price: {
+    origin: "$90.50",
+    discount: "$45.90"
+  },
+  ingredients: ["vanilla", "basil"]
+}
+
 const p1 = {
-  name: "soap", 
+  name: "Gummy Soap", 
   star: 3,
   image: "images/soap2.png",
   price: {
     origin: "$100.00",
     discount: "$50.00"
-  }
+  },
+  ingredients: ["anise", "borage"]
+}
+
+const p2 = {
+  name: "Carved Crystal", 
+  star: 5,
+  image: "images/soap3.jpg",
+  price: {
+    origin: "$60.50",
+    discount: "$40.90"
+  },
+  ingredients: ["caraway"]
 }
 
 const Home = () => {
@@ -27,43 +50,9 @@ const Home = () => {
       </div>
 
       <div className="all-products">
-        <div className="product">
-          <div className="center">
-            <img className="product-image" src="images/soap1.jpg" alt="soap1" />
-          </div>
-          <div style={{fontSize: '1.5rem'}}>Earthy Blend</div>
-          <div>
-            <FontAwesomeIcon style={{color: 'gold'}} icon={faStar} />
-            <FontAwesomeIcon style={{color: 'gold'}} icon={faStar} />
-            <FontAwesomeIcon style={{color: 'gold'}} icon={faStar} />
-            <FontAwesomeIcon style={{color: 'gold'}} icon={faStar} />
-            <FontAwesomeIcon style={{color: 'lightgray'}} icon={faStar} />
-          </div>
-          <div style={{textDecoration:'line-through'}}>$ 90.50</div>
-          <div style={{color:'crimson', fontSize:'1.5rem', fontWeight:'900'}}>$ 45.90</div>
-          <div style={{color:'lightgray'}}>
-            <FontAwesomeIcon icon={faSeedling} />
-            vanilla,&nbsp;
-            <FontAwesomeIcon style={{color:'lightgray'}} icon={faSeedling} />
-            basil
-          </div>
-        </div>
+        <Product product={p0} />
         <Product product={p1} />
-        {/*<div className="product">
-          <img className="product-image" src="images/soap2.png" alt="soap2" />
-          <h2>Soap 2</h2>
-          <div>$ 60.00</div>
-        </div>
-        <div className="product">
-          <img className="product-image" src="images/soap3.jpg" alt="soap3" />
-          <h2>Soap 3</h2>
-          <div>$ 70.00</div>
-        </div>
-        <div className="product">
-          <img className="product-image" src="images/soap4.jpg" alt="soap4" />
-          <h2>Soap 4</h2>
-          <div>$ 50.00</div>
-        </div>*/}
+        <Product product={p2} />
       </div>
   	</div>
   )
