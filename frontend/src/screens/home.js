@@ -2,6 +2,17 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faSeedling } from '@fortawesome/free-solid-svg-icons'
 
+import Product from '../products/product.js'
+
+const p1 = {
+  name: "soap", 
+  star: 3,
+  image: "images/soap2.png",
+  price: {
+    origin: "$100.00",
+    discount: "$50.00"
+  }
+}
 
 const Home = () => {
 
@@ -37,7 +48,7 @@ const Home = () => {
             basil
           </div>
         </div>
-
+        <Product product={p1} />
         {/*<div className="product">
           <img className="product-image" src="images/soap2.png" alt="soap2" />
           <h2>Soap 2</h2>
