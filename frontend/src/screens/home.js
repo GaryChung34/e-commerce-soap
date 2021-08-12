@@ -1,43 +1,17 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faSeedling } from '@fortawesome/free-solid-svg-icons'
+import { useSelector } from 'react-redux'
 
 import Product from '../products/product.js'
 
-const p0 = {
-  name: "Earthy Blend", 
-  star: 4,
-  image: "images/soap1.jpg",
-  price: {
-    origin: "$90.50",
-    discount: "$45.90"
-  },
-  ingredients: ["vanilla", "basil"]
-}
-
-const p1 = {
-  name: "Gummy Soap", 
-  star: 3,
-  image: "images/soap2.png",
-  price: {
-    origin: "$100.00",
-    discount: "$50.00"
-  },
-  ingredients: ["anise", "borage"]
-}
-
-const p2 = {
-  name: "Carved Crystal", 
-  star: 5,
-  image: "images/soap3.jpg",
-  price: {
-    origin: "$60.50",
-    discount: "$40.90"
-  },
-  ingredients: ["caraway"]
-}
 
 const Home = () => {
+  const products = useSelector(state => state.products)
+  const homeProducts = products.slice(0, 4)
+  const productsList = homeProducts.map(product => (
+      <Product product={product} />
+  ))
 
 	return (
 		<div className='grid'>
@@ -50,9 +24,7 @@ const Home = () => {
       </div>
 
       <div className="all-products">
-        <Product product={p0} />
-        <Product product={p1} />
-        <Product product={p2} />
+        {productsList}
       </div>
   	</div>
   )

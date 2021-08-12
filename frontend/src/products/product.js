@@ -28,7 +28,7 @@ const Product = ({ product }) => {
   
 
 	return(
-		<div className="product">
+		<div className="product" key={product.id}>
       <div className="center">
         <img className="product-image" src={product.image} alt={product.name} />
       </div>

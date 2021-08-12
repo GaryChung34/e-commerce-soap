@@ -99,6 +99,10 @@ body {
   padding: 5px 10px;
 }
 
+.product:hover img {
+  opacity: 0.5;
+}
+
 .product-image {
   width: 200px;
   height: 200px;
