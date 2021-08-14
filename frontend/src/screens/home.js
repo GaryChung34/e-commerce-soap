@@ -7,7 +7,7 @@ import Product from '../products/product.js'
 
 
 const Home = () => {
-  const products = useSelector(state => state.products)
+  const products = useSelector(state => state.products.products)
   const homeProducts = products.slice(0, 4)
   const productsList = homeProducts.map(product => (
       <Product product={product} />
