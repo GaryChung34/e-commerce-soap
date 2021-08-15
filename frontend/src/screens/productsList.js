@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Product from '../products/product.js'
 import { fetchProducts } from '../products/productsSlice.js'
+import { Link } from 'react-router-dom'
 
 
 const ProductsList = () => {
@@ -9,7 +10,9 @@ const ProductsList = () => {
 	const dispatch = useDispatch()
 
 	const productsList = products.map(product => (
-		<Product product={product}/>
+		<Link to="" className="link-noDeco">
+			<Product product={product}/>
+		</Link>
 	))
 
 	// useEffect(

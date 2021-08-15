@@ -8,25 +8,20 @@ import {
 import Home from './screens/home.js'
 import AboutUs from './screens/aboutUs.js'
 import ProductsList from './screens/productsList.js'
+import NaviBar from './screens/naviBar.js'
 
 
 function App() {
   return (
     <Router>
       <div className="grid-container">
-        <header className="header">
-          <div className="brand">
-            <Link to="/">Simple Soap</Link>
-          </div>
-          <div className="header-link">
-            <a href="">Cart</a>
-            <a href="">Log in</a>
-          </div>
-        </header>
+      <NaviBar />
 
       <main className="main">
         <div className="center">
-          <img src="images/logo-center.jpg" alt="logo-wide.jpg" />
+          <Link to="/">
+            <img class="logo" src="images/logo-center.jpg" alt="logo-wide.jpg" />
+          </Link>
         </div>
         <div className="center">
           <Link to='/aboutUs'>

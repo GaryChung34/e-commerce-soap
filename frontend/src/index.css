@@ -15,11 +15,15 @@ body {
   height: 100%
 }
 
+.link-noDeco {
+  text-decoration: none;
+  color: black;
+}
 
 /* header */
 .header {
   grid-area: header;
-  background-color: PowderBlue;
+  background-color: #3498DB;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,15 +37,12 @@ body {
   padding: 0.5rem;
 }
 
-.header-link a{
-  text-decoration: none;
-  color: White;
-  font-size: 2rem;
-  padding: 0.5rem;
+.header-link {
+  display: flex;
 }
 
-.header-link a:hover{
-  color: SteelBlue;
+.logo {
+  width: 25rem;
 }
 
 
@@ -86,6 +87,10 @@ body {
   background-color: white;
 }
 
+.product-Link {
+  text-decoration: none;
+}
+
 .product {
   display: grid;
   grid-template-columns: 1;
@@ -113,7 +118,7 @@ body {
 /* footer */
 .footer {
   grid-area: footer;
-  background-color: PowderBlue
+  background-color: #3498DB;
 }
 
 
@@ -139,4 +144,19 @@ body {
 .blue-button:hover {
   background-color: PowderBlue;
   color: white;
+}
+
+.header-button {
+  margin: 3px;
+  padding: 5px;
+  background-color: #3498DB;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.header-button:hover {
+  border: 1px solid;
 }
