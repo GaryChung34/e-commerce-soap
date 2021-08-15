@@ -39,6 +39,8 @@ body {
 
 .header-link {
   display: flex;
+  width: 35%;
+  justify-content: space-between;
 }
 
 .logo {
@@ -159,4 +161,31 @@ body {
 
 .header-button:hover {
   border: 1px solid;
+}
+
+/* search bar */
+.search-container {
+  margin: auto 0;
+}
+
+
+
+.search-container input[type=text] {
+  padding: 5px;
+  font-size: 1.25rem;
+  border: none;
+  width: 15rem;
+}
+
+.search-container button {
+  margin: ;
+  padding: 5px 10px;
+  background-color: gainsboro;
+  font-size: 1.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background-color: silver;
 }
