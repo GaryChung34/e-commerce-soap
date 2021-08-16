@@ -10,21 +10,15 @@ const ProductsList = () => {
 	const dispatch = useDispatch()
 
 	const productsList = products.map(product => (
-		<Link to="" className="link-noDeco">
+		<Link to={`/product/${product.id}`} className="link-noDeco">
 			<Product product={product}/>
 		</Link>
 	))
 
-	// useEffect(
-	// 	dispatch(fetchProducts())
-	// )
-
 	return (
-		<div className='grid'>
 			<div className='all-products'>
 				{productsList}
 			</div>
-		</div>
 	)
 }
 

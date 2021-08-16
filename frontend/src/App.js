@@ -11,6 +11,7 @@ import ProductsList from './screens/productsList.js'
 import NaviBar from './screens/naviBar.js'
 import Cart from './screens/cart.js'
 import SignIn from './screens/signIn.js'
+import ProductDetail from './screens/productDetail.js'
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <Route exact path='/productsList' component={ProductsList} />
           <Route exact path='/signIn' component={SignIn} />
           <Route exact path='/Cart' component={Cart} />
+          <Route exact path='/product/:productId' component={ProductDetail} />
           <Redirect to='/' />
         </Switch>
       </main>
