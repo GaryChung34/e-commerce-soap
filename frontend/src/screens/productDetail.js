@@ -25,6 +25,7 @@ const ProductDetail = ({ match }) => {
 
 	return (
 		<div>
+			<h1>Product Detail:</h1>
 			<ul>
 				<li>name: {product.name}</li>
 				<li>price: {product.price.discount}</li>
