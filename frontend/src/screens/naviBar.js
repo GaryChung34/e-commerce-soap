@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
+
 const NaviBar = () => {
 	return (
 		<header className="header">
@@ -20,12 +21,12 @@ const NaviBar = () => {
 	      	</form>
       	</div>
       	<div className="search-container">
-	      	<Link className="header-button">
+	      	<Link className="header-button" to='/Cart'>
 	      		<FontAwesomeIcon icon={faShoppingCart} 
 	      			style={{color: 'white', fontSize: '20px'}} />
 	      		&nbsp;Cart
 	      	</Link>
-	        <Link className="header-button">
+	        <Link className="header-button" to="/SignIn">
 	        	Login
 	        </Link>
         </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faSeedling } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 
 const Product = ({ product }) => {
@@ -21,8 +22,11 @@ const Product = ({ product }) => {
 
   for (let x in product.ingredients) {
     ingredients.push(
-      <FontAwesomeIcon icon={faSeedling} />,
-      <span>{product.ingredients[x]}&nbsp;&nbsp;</span>
+      <Link to='' className='link-inde'>
+        <FontAwesomeIcon icon={faSeedling} />
+        <span>{product.ingredients[x]}</span>
+      </Link>,
+      <span>&nbsp;&nbsp;</span>
     )
   }
   
@@ -36,11 +40,13 @@ const Product = ({ product }) => {
       <div>
         {renderStar}
       </div>
-      <div style={{textDecoration:'line-through'}}>{product.price.origin}</div>
-      <div style={{color:'crimson', fontSize:'1.5rem', fontWeight:'900'}}>
+      <div style={{textDecoration:'line-through', color:'black'}}>
+        {product.price.origin}
+      </div>
+      <div style={{color:'crimson', fontSize:'1.5rem', fontWeight:'900', textDecoration: 'none'}}>
         {product.price.discount}
       </div>
-      <div style={{color:'lightgray'}}>
+      <div>
         {ingredients}
       </div>
     </div>
