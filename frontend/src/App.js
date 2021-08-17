@@ -12,6 +12,7 @@ import NaviBar from './components/naviBar.js'
 import CartPage from './screens/cartPage.js'
 import SignIn from './screens/signIn.js'
 import ProductDetail from './screens/productDetail.js'
+import SearchPage from './screens/searchPage.js'
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Route exact path='/signIn' component={SignIn} />
           <Route exact path='/Cart' component={CartPage} />
           <Route exact path='/product/:productId' component={ProductDetail} />
+          <Route exact path='/search/:searchString' component={SearchPage} />
           <Redirect to='/' />
         </Switch>
       </main>

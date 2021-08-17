@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
+import SearchBar from './searchBar.js'
+
 
 const NaviBar = () => {
 	return (
@@ -11,15 +13,7 @@ const NaviBar = () => {
         <Link to="/">Simple Soap</Link>
       </div>
       <div className="header-link">
-      	<div className="search-container">
-	      	<form>
-	      		<input type="text" placeholder="search...	" />
-	      		<button>
-	      			<FontAwesomeIcon icon={faSearch} 
-	      				style={{color: "white"}}/>
-	      		</button>
-	      	</form>
-      	</div>
+      	<SearchBar />
       	<div className="search-container">
 	      	<Link className="header-button" to='/Cart'>
 	      		<FontAwesomeIcon icon={faShoppingCart} 

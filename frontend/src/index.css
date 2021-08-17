@@ -187,8 +187,6 @@ body {
   margin: auto 0;
 }
 
-
-
 .search-container input[type=text] {
   padding: 5px;
   font-size: 1.25rem;
@@ -196,8 +194,7 @@ body {
   width: 15rem;
 }
 
-.search-container button {
-  margin: ;
+.search-button {
   padding: 5px 10px;
   background-color: gainsboro;
   font-size: 1.25rem;
@@ -205,6 +202,6 @@ body {
   cursor: pointer;
 }
 
-.search-container button:hover {
+.search-button:hover {
   background-color: silver;
 }
