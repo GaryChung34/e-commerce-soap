@@ -10,8 +10,9 @@ import Product from '../products/product.js'
 const Home = () => {
   const products = useSelector(state => state.products.products)
   const homeProducts = products.slice(0, 4)
+
   const productsList = homeProducts.map(product => (
-    <Link to="" className="link-noDeco">
+    <Link to={`/product/${product.id}`} className="link-noDeco">
       <Product product={product} />
     </Link>
   ))
@@ -26,7 +27,7 @@ const Home = () => {
         <h2>Favorites:</h2>
       </div>
 
-      <div className="all-products">
+      <div className="all-products" style={{flexWrap:'nowrap'}}>
         {productsList}
       </div>
   	</div>

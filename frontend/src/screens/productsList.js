@@ -11,7 +11,7 @@ const ProductsList = () => {
 
 	const productsList = products.map(product => (
 		<Link to={`/product/${product.id}`} className="link-noDeco">
-			<Product product={product}/>
+			<Product product={product} />
 		</Link>
 	))
 
