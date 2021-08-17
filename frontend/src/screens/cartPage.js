@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { addCart } from '../cart/cartSlice.js'
+import { addCart } from '../feature/cart/cartSlice.js'
 
 
-const Cart = () => {
+const CartPage = () => {
 	const cartItems = useSelector(state => state.cart)
 	const products = useSelector(state => state.products.products)
 	const dispatch = useDispatch()
@@ -47,4 +47,4 @@ const Cart = () => {
 	)
 }
 
-export default Cart
+export default CartPage

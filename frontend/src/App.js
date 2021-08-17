@@ -8,8 +8,8 @@ import {
 import Home from './screens/home.js'
 import AboutUs from './screens/aboutUs.js'
 import ProductsList from './screens/productsList.js'
-import NaviBar from './screens/naviBar.js'
-import Cart from './screens/cart.js'
+import NaviBar from './components/naviBar.js'
+import CartPage from './screens/cartPage.js'
 import SignIn from './screens/signIn.js'
 import ProductDetail from './screens/productDetail.js'
 
@@ -42,7 +42,7 @@ function App() {
           <Route exact path='/aboutUs' component={AboutUs} />
           <Route exact path='/productsList' component={ProductsList} />
           <Route exact path='/signIn' component={SignIn} />
-          <Route exact path='/Cart' component={Cart} />
+          <Route exact path='/Cart' component={CartPage} />
           <Route exact path='/product/:productId' component={ProductDetail} />
           <Redirect to='/' />
         </Switch>

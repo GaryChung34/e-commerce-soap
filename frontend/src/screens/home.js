@@ -4,7 +4,7 @@ import { faStar, faSeedling } from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import Product from '../products/product.js'
+import Product from '../components/product.js'
 
 
 const Home = () => {

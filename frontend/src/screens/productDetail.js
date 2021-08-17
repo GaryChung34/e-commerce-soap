@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { addCart } from '../cart/cartSlice.js'
+import { addCart } from '../feature/cart/cartSlice.js'
 
 
 const ProductDetail = ({ match }) => {

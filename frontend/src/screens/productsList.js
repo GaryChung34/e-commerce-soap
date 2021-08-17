@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import Product from '../products/product.js'
-import { fetchProducts } from '../products/productsSlice.js'
+import Product from '../components/product.js'
+import { fetchProducts } from '../feature/products/productsSlice.js'
 import { Link } from 'react-router-dom'
 
 
