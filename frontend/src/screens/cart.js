@@ -27,7 +27,10 @@ const Cart = () => {
 
 		return(
 			<li>
-				name:{cartItem.name}&nbsp;id:{cartItem.id}&nbsp;price:{cartItem.price.discount}
+				name: {cartItem.name}&nbsp;
+				id: {cartItem.id}&nbsp;
+				price: {cartItem.price.discount}&nbsp;
+				quantity: {item.quantity}
 			</li>
 		)
 	})

@@ -1,10 +1,12 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { addCart } from '../cart/cartSlice.js'
 
 
 const ProductDetail = ({ match }) => {
 	const { productId } = match.params
-	console.log(productId)
+	const [ qty, setQty ] = useState(0)
+	const dispatch = useDispatch()
 
 	const product = useSelector(state => 
 		state.products.products.find(
@@ -12,8 +14,21 @@ const ProductDetail = ({ match }) => {
 		)
 	)
 
+	const onPlus = () => {
+		setQty(qty + 1)
+	}
+
+	const onMinus = () => {
+		if (qty > 0) {
+			setQty(qty - 1)
+		}
+	}
 	
-	console.log(product)
+	const onSubmit = () => {
+		dispatch(addCart(
+			{id: productId, quantity: qty}
+		))
+	}
 
 	if (!productId) {
 		return (
@@ -31,6 +46,12 @@ const ProductDetail = ({ match }) => {
 				<li>price: {product.price.discount}</li>
 				<li>id: {product.id}</li>
 			</ul>
+			<span style={{padding:'10px'}}>
+				{qty}
+			</span>
+			<button style={{margin:'5px'}} onClick={onPlus}> + </button>
+			<button style={{margin:'5px'}} onClick={onMinus}> - </button>
+			<button style={{margin:'5px'}} onClick={onSubmit}>submit</button>
 		</div>
 	)
 }
