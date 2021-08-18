@@ -4,21 +4,39 @@ import { faStar, faSeedling } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
 
-const Product = ({ product }) => {
+export const showStar = (rank) => {
   let renderStar = []
-  let ingredients = []
-  
-  for (let x = 0; x < product.star; x++) {
+
+  for (let x = 0; x < rank; x++) {
     renderStar.push(
       <FontAwesomeIcon style={{color: 'gold'}} icon={faStar} />
     ) 
   }
-  
-  for (let x = 0; x < (5-product.star); x++) {
+  for (let x = 0; x < (5-rank); x++) {
     renderStar.push(
       <FontAwesomeIcon style={{color: 'lightgray'}} icon={faStar} />
     ) 
   }
+  return renderStar
+}
+
+export const showIngredient = (ingredientsList) => {
+  let ingredients = []
+
+  for (let x in ingredientsList) {
+    ingredients.push(
+      <Link to='' className='link-inde'>
+        <FontAwesomeIcon icon={faSeedling} />
+        <span>{ingredientsList[x]}</span>
+      </Link>,
+      <span>&nbsp;&nbsp;</span>
+    )
+  }
+  return ingredients
+}
+
+const Product = ({ product }) => {
+  let ingredients = []
 
   for (let x in product.ingredients) {
     ingredients.push(
@@ -38,7 +56,7 @@ const Product = ({ product }) => {
       </div>
       <div style={{fontSize: '1.5rem'}}>{product.name}</div>
       <div>
-        {renderStar}
+        {showStar(product.star)}
       </div>
       <div style={{textDecoration:'line-through', color:'black'}}>
         {product.price.origin}
@@ -47,7 +65,7 @@ const Product = ({ product }) => {
         {product.price.discount}
       </div>
       <div>
-        {ingredients}
+        {showIngredient(product.ingredients)}
       </div>
     </div>
 	)

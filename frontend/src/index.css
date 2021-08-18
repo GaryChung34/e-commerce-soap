@@ -234,3 +234,49 @@ body {
 .productAddress a:hover {
   color: gray;
 }
+
+.detail-link a {
+  color: black;
+}
+
+
+/* Add Cart button */
+.plus-button {
+  background-color: silver;
+  font-size: 1rem;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.plus-button:active {
+  background-color: gainsboro;
+}
+
+.qty-container {
+  display: grid;
+  margin: 0px auto;
+  grid-template-columns: 40px 100px 40px;
+  grid-template-rows: 40px;
+  grid-gap: 1px;
+  padding: 1px;
+  background-color: black;
+  width: 182px;
+}
+
+.qty-box {
+  background-color: white;
+  padding: 10px;
+}
+
+.addCart {
+  border: none;
+  background: #3498DB;
+  width: 182px;
+  height: 40px;
+  font-size: 1.25rem;
+}
+
+.addCart:active {
+  background-color: lightskyblue;
+}
