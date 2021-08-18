@@ -1,8 +1,16 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 
 const SearchPage = ({ match }) => {
 	const { searchString } = match.params
+	const products = useSelector(state => state.products.products)
+
+	const searchList = products.filter(product => {
+		
+	})
+
+
 
 	return (
 		<div>
