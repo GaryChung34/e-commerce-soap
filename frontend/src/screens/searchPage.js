@@ -31,10 +31,13 @@ const SearchPage = ({ match }) => {
 		)
 	}
 
+	const { search } = window.location
+	console.log('window location: ', search)
+
 	return (
 		<div>
 			<h1>Search Result:</h1>
-			<div>Searching: {searchString}</div> 
+			<div>Searching: {searchString}</div>
 			{renderList}
 		</div>
 	)
