@@ -1,10 +1,17 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimesCircle } from '@fortawesome/free-regular-svg-icons'
+import { useDispatch } from 'react-redux'
+import { removeCart } from '../feature/cart/cartSlice.js'
 
 
 const CartItem = ({ product, qty }) => {
-	console.log(qty)
+	const dispatch = useDispatch()
+
+	const onCancel = () => {
+		dispatch(removeCart(product.id))
+	}
+
 	return(
 		<div className='cartItem'>
 			<div style={{display:'flex', alignItems:'center'}}>
@@ -17,7 +24,9 @@ const CartItem = ({ product, qty }) => {
 			<div>
 				<span>Qty:&nbsp;{qty}</span>
 				<span>${product.price.discount*qty}</span>
-				<button><FontAwesomeIcon icon={faTimesCircle} /></button>
+				<button onClick={onCancel}>
+					<FontAwesomeIcon icon={faTimesCircle} />
+				</button>
 			</div>
 		</div>
 	)
