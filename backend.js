@@ -14,8 +14,8 @@ const products = [
 	  star: 4,
 	  image: "/images/soap1.jpg",
 	  price: {
-	    origin: "$90.50",
-	    discount: "$45.90"
+	    origin: 90.50,
+	    discount: 45.90
 	  },
 	  ingredients: ["vanilla", "basil"]
 	},
@@ -26,8 +26,8 @@ const products = [
 	  star: 3,
 	  image: "/images/soap2.png",
 	  price: {
-	    origin: "$100.00",
-	    discount: "$50.00"
+	    origin: 100.00,
+	    discount: 50.00
 	  },
 	  ingredients: ["anise", "borage"]
 	},
@@ -38,8 +38,8 @@ const products = [
 	  star: 5,
 	  image: "/images/soap3.jpg",
 	  price: {
-	    origin: "$60.50",
-	    discount: "$40.90"
+	    origin: 60.50,
+	    discount: 40.90
 	  },
 	  ingredients: ["caraway"]
 	}, 
@@ -50,8 +50,8 @@ const products = [
 	  star: 1,
 	  image: "/images/soap4.jpg",
 	  price: {
-	    origin: "$55.50",
-	    discount: "$45.90"
+	    origin: 55.50,
+	    discount: 45.90
 	  },
 	  ingredients: ["burnet", "mace"]
 	}, 
@@ -62,8 +62,8 @@ const products = [
 	  star: 2,
 	  image: "/images/soap5.jpg",
 	  price: {
-	    origin: "$70.50",
-	    discount: "$65.50"
+	    origin: 70.50,
+	    discount: 65.50
 	  },
 	  ingredients: ["rue", "sage", "dill"]
 	},
@@ -74,8 +74,8 @@ const products = [
 	  star: 4,
 	  image: "/images/soap6.jpg",
 	  price: {
-	    origin: "$70.50",
-	    discount: "$50.00"
+	    origin: 70.50,
+	    discount: 50.00
 	  },
 	  ingredients: ["fenugreek"]
 	},
@@ -86,8 +86,8 @@ const products = [
 	  star: 5,
 	  image: "/images/soap7.jpg",
 	  price: {
-	    origin: "$70.50",
-	    discount: "$50.00"
+	    origin: 70.50,
+	    discount: 50.00
 	  },
 	  ingredients: ["ginger", "hyssop"]
 	},
@@ -98,8 +98,8 @@ const products = [
 	  star: 4,
 	  image: "/images/soap8.jpg",
 	  price: {
-	    origin: "$70.50",
-	    discount: "$65.50"
+	    origin: 70.50,
+	    discount: 65.50
 	  },
 	  ingredients: ["rue"]
 	},
@@ -110,8 +110,8 @@ const products = [
 	  star: 5,
 	  image: "/images/soap9.jpg",
 	  price: {
-	    origin: "$70.50",
-	    discount: "$50.50"
+	    origin: 70.50,
+	    discount: 50.50
 	  },
 	  ingredients: ["sage", "dill"]
 	},
@@ -122,8 +122,8 @@ const products = [
 	  star: 4,
 	  image: "/images/soap10.jpg",
 	  price: {
-	    origin: "$70.50",
-	    discount: "$60.50"
+	    origin: 70.50,
+	    discount: 60.50
 	  },
 	  ingredients: ["cumin", "lovage"]
 	},

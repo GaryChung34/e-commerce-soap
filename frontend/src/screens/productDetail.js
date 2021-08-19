@@ -7,7 +7,7 @@ import { showStar, showIngredient } from '../components/product.js'
 
 const ProductDetail = ({ match }) => {
 	const { productId } = match.params
-	const [ qty, setQty ] = useState(0)
+	const [ qty, setQty ] = useState(1)
 	const dispatch = useDispatch()
 
 	const product = useSelector(state => 
@@ -42,12 +42,6 @@ const ProductDetail = ({ match }) => {
 
 	return (
 		<div className='productDetail'>
-			{/*
-			<button style={{margin:'5px'}} onClick={onPlus}> + </button>
-			<button style={{margin:'5px'}} onClick={onMinus}> - </button>
-			<button style={{margin:'5px'}} onClick={onSubmit}>submit</button>
-			*/}
-
 			<div className='productAddress'>
 				<Link to='/'>Home</Link>
 				&nbsp;>&nbsp; 

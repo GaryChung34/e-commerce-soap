@@ -2,47 +2,38 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { addCart } from '../feature/cart/cartSlice.js'
 
+import CartItem from '../components/cartItem.js'
+
 
 const CartPage = () => {
 	const cartItems = useSelector(state => state.cart)
 	const products = useSelector(state => state.products.products)
 	const dispatch = useDispatch()
 
-	const handleAddS1 = () => {
-		dispatch(addCart({
-			id: "s1", 
-			quantity: 2
-		}))
-	}
-
-	const handleAddS2 = () => {
-		dispatch(addCart({
-			id: "s2", 
-			quantity: 1
-		}))
-	}
 
 	const cartRender = cartItems.map(item => {
 		const cartItem = products.find(product => product.id === item.id)
 
 		return(
-			<li>
-				name: {cartItem.name}&nbsp;
-				id: {cartItem.id}&nbsp;
-				price: {cartItem.price.discount}&nbsp;
-				quantity: {item.quantity}
-			</li>
+			<CartItem product={cartItem} qty={item.quantity} />
 		)
 	})
 
+	const total = () => {
+		let result = 0
+		cartItems.map(item => {
+			const cartItem = products.find(product => product.id === item.id)
+			result += cartItem.price.discount * item.quantity
+		})
+
+		return result
+	}
+
 	return(
-		<div>
-			<button onClick={handleAddS1}>S1</button>
-			<button onClick={handleAddS2}>S2</button>
+		<div className='cartList'>
 			<h1>Cart: </h1>
-			<ul>
-				{cartRender}
-			</ul>
+			{cartRender}
+			<h2>Total:&nbsp;${total()}</h2>
 		</div>
 	)
 }

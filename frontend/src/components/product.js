@@ -59,10 +59,10 @@ const Product = ({ product }) => {
         {showStar(product.star)}
       </div>
       <div style={{textDecoration:'line-through', color:'black'}}>
-        {product.price.origin}
+        ${product.price.origin}
       </div>
       <div style={{color:'crimson', fontSize:'1.5rem', fontWeight:'900', textDecoration: 'none'}}>
-        {product.price.discount}
+        ${product.price.discount}
       </div>
       <div>
         {showIngredient(product.ingredients)}
