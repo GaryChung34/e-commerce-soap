@@ -11,14 +11,25 @@ const SearchBar = () => {
 		setSearchString(e.target.value)
 	}
 
+
 	return (
 		<div className="search-container">
     	<form>
-    		<input type="text" placeholder="search...	" onChange={onSearchChange} />
-    		<Link className="search-button" to={`/search/${searchString}`}>
-    			<FontAwesomeIcon icon={faSearch} 
-    				style={{color: "white"}}/>
+    		<label htmlFor='header-search' />
+    		<input 
+    			type="text" 
+    			placeholder="search...	" 
+    			onChange={onSearchChange}
+    		/>
+    		<Link to={`/search/${searchString}`}>
+    			<button className="search-button" type='submit'>
+    				<FontAwesomeIcon 
+    					icon={faSearch} 
+    					style={{color: "white"}} 
+    				/>
+    			</button>
     		</Link>
+    		
     	</form>
   	</div>
 	)
