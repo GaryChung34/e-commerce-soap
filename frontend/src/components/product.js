@@ -25,7 +25,7 @@ export const showIngredient = (ingredientsList) => {
 
   for (let x in ingredientsList) {
     ingredients.push(
-      <Link to='' className='link-inde'>
+      <Link to={`/search/${ingredientsList[x]}`} className='link-inde'>
         <FontAwesomeIcon icon={faSeedling} />
         <span>{ingredientsList[x]}</span>
       </Link>,

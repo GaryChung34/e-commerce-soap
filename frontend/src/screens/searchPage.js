@@ -11,7 +11,10 @@ const SearchPage = ({ match }) => {
 
 	const searchList = products.filter(product => {
 		const productName = product.name.toLowerCase()
-		return productName.includes(searchString)
+		return ( 
+			productName.includes(searchString) ||
+			product.ingredients.includes(searchString)
+		)
 	})
 
 	const showList = searchList.map(item => (

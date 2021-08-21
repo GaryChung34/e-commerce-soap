@@ -29,7 +29,7 @@ const products = [
 	    origin: 100.00,
 	    discount: 50.00
 	  },
-	  ingredients: ["anise", "borage"]
+	  ingredients: ["vanilla", "borage"]
 	},
 
 	{
@@ -41,7 +41,7 @@ const products = [
 	    origin: 60.50,
 	    discount: 40.90
 	  },
-	  ingredients: ["caraway"]
+	  ingredients: ["vanilla"]
 	}, 
 
 	{
@@ -53,7 +53,7 @@ const products = [
 	    origin: 55.50,
 	    discount: 45.90
 	  },
-	  ingredients: ["burnet", "mace"]
+	  ingredients: ["basil", "mace"]
 	}, 
 
 	{
@@ -65,7 +65,7 @@ const products = [
 	    origin: 70.50,
 	    discount: 65.50
 	  },
-	  ingredients: ["rue", "sage", "dill"]
+	  ingredients: ["borage", "basil", "dill"]
 	},
 
 	{
@@ -77,7 +77,7 @@ const products = [
 	    origin: 70.50,
 	    discount: 50.00
 	  },
-	  ingredients: ["fenugreek"]
+	  ingredients: ["basil"]
 	},
 
 	{
@@ -89,7 +89,7 @@ const products = [
 	    origin: 70.50,
 	    discount: 50.00
 	  },
-	  ingredients: ["ginger", "hyssop"]
+	  ingredients: ["basil", "hyssop"]
 	},
 
 	{
@@ -113,7 +113,7 @@ const products = [
 	    origin: 70.50,
 	    discount: 50.50
 	  },
-	  ingredients: ["sage", "dill"]
+	  ingredients: ["rue", "mace"]
 	},
 
 	{
@@ -125,7 +125,7 @@ const products = [
 	    origin: 70.50,
 	    discount: 60.50
 	  },
-	  ingredients: ["cumin", "lovage"]
+	  ingredients: ["borage", "mace"]
 	},
 ]
 
