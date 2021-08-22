@@ -9,12 +9,12 @@ export const showStar = (rank) => {
 
   for (let x = 0; x < rank; x++) {
     renderStar.push(
-      <FontAwesomeIcon style={{color: 'gold'}} icon={faStar} />
+      <FontAwesomeIcon style={{color: 'gold'}} icon={faStar} key={`gold${x}`}/>
     ) 
   }
   for (let x = 0; x < (5-rank); x++) {
     renderStar.push(
-      <FontAwesomeIcon style={{color: 'lightgray'}} icon={faStar} />
+      <FontAwesomeIcon style={{color: 'lightgray'}} icon={faStar} key={`gray${x}`}/>
     ) 
   }
   return renderStar
@@ -25,29 +25,19 @@ export const showIngredient = (ingredientsList) => {
 
   for (let x in ingredientsList) {
     ingredients.push(
-      <Link to={`/search/${ingredientsList[x]}`} className='link-inde'>
-        <FontAwesomeIcon icon={faSeedling} />
-        <span>{ingredientsList[x]}</span>
-      </Link>,
-      <span>&nbsp;&nbsp;</span>
+      <React.Fragment key={x}>
+        <Link to='' className='link-inde'>
+          <FontAwesomeIcon icon={faSeedling} />
+          <span>{ingredientsList[x]}</span>
+        </Link>,
+        <span>&nbsp;&nbsp;</span>
+      </React.Fragment>
     )
   }
   return ingredients
 }
 
 const Product = ({ product }) => {
-  let ingredients = []
-
-  for (let x in product.ingredients) {
-    ingredients.push(
-      <Link to='' className='link-inde'>
-        <FontAwesomeIcon icon={faSeedling} />
-        <span>{product.ingredients[x]}</span>
-      </Link>,
-      <span>&nbsp;&nbsp;</span>
-    )
-  }
-  
 
 	return(
 		<div className="product" key={product.id}>
