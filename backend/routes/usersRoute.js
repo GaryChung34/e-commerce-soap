@@ -1,18 +1,43 @@
 import express from 'express'
 import User from '../models/usersModel.js'
+import { getToken } from '../util.js'
 
 
 const route = express.Router()
 
-route.get('/createAdmin', (req, res) => {
-	const user = new User({
-		name: 'gary123', 
-		email: 'gary123@gary123.com',
-		password: 'password',
-		isAdmin: true
+route.post('/signIn', async (req, res) => {
+	const signInUser = await User.findOne({
+		email: req.body.email,
+		password: req.body.password
 	})
-	user.save()
-	res.send(user)
+
+	if(signInUser) {
+		res.send({
+			_id: signInUser._id,
+			name: signInUser.name,
+			email: signInUser.email,
+			isAdmin: signInUser.isAdmin,
+			token: getToken(signInUser),
+		})
+	} else {
+		res.status(404).send({msg: 'cannot find user.'})
+	}
+})
+
+route.get('/createAdmin', async (req, res) => {
+	try {
+		const user = new User({
+			name: 'gary123', 
+			email: 'gary123@gary123.com',
+			password: 'password',
+			isAdmin: true
+		})
+		await user.save()
+		res.send(user)
+	} 
+	catch (error) {
+		res.send(error.message)
+	}
 })
 
 export default route
