@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/GaryChung34/e-commerce-soap#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
