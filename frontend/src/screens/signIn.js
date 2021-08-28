@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-// import { userLogin } from '../feature/user/userSlice.js'
+import { fetchUserSignin } from '../feature/user/userSlice.js'
 
 
 const SignIn = () => {
 	const [ user, setUser ] = useState('')
 	const [ password, setPassword ] = useState('')
-	// const userSignin = useSelector(state => state.user)
+	const userSignin = useSelector(state => state.user.userSignin)
 	const dispatch = useDispatch()
 
 	const onUserChange = (e) => {
@@ -18,14 +18,17 @@ const SignIn = () => {
 	}
 
 	const handleSubmit = () => {
-		// dispatch(userLogin)
+		dispatch(fetchUserSignin({
+			name: user,
+			password: password
+		}))
 	}
 
-	// useEffect({
-	// 	if(userLogin) {
-	// 		this.history.push('/')
-	// 	}
-	// }, [userSignin]) 
+	useEffect({
+		if(userLogin) {
+			this.history.push('/')
+		}
+	}, [userSignin]) 
 
 
 	return(
