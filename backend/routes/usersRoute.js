@@ -6,21 +6,28 @@ import { getToken } from '../util.js'
 const route = express.Router()
 
 route.post('/signIn', async (req, res) => {
-	const signInUser = await User.findOne({
-		email: req.body.email,
-		password: req.body.password
-	})
-
-	if(signInUser) {
-		res.send({
-			_id: signInUser._id,
-			name: signInUser.name,
-			email: signInUser.email,
-			isAdmin: signInUser.isAdmin,
-			token: getToken(signInUser),
-		})
-	} else {
-		res.status(404).send({msg: 'cannot find user.'})
+	try {
+		console.log(User)
+		console.log(typeof User)
+		console.log(req.body.name)
+		const signInUser = await User.findOne({
+			name: req.name,
+		}).exec()
+		console.log('finish find.')
+		console.log(signInUser)
+		if(signInUser) {
+			res.send({
+				_id: signInUser._id,
+				name: signInUser.name,
+				email: signInUser.email,
+				isAdmin: signInUser.isAdmin,
+				// token: getToken(signInUser),
+			})
+		} else {
+			res.status(404).send({msg: 'cannot find user.'})
+		}
+	} catch (error) {
+		res.send(error.message)
 	}
 })
 

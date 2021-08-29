@@ -28,7 +28,7 @@ const SignIn = () => {
 		if(userLogin) {
 			this.history.push('/')
 		}
-	}, [userSignin]) 
+	}, [userSignin])
 
 
 	return(

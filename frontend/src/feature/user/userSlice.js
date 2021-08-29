@@ -10,7 +10,7 @@ const initialState = {
 export const fetchUserSignin = createAsyncThunk(
 	'user/fetchUserSignin',
 	async () => {
-		const response = axios.post('/api/users/signIn', {
+		const response = await axios.post('/api/users/signIn', {
 			name: payload.name,
 			password: payload.password
 		})

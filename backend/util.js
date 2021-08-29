@@ -4,7 +4,7 @@ import config from './config.js'
 
 export const getToken = (user) => {
 	return(
-		jwt.token(user, config.JWT_SECRET, {
+		jwt.sign(user, config.JWT_SECRET, {
 			expiresIn: '48h'
 		})
 	)

@@ -11,6 +11,7 @@ const mongodbUrl = config.MONGODB_URL
 mongoose.connect(mongodbUrl, {
 	useNewUrlParser: true
 }).catch(error => console.log(error.reason))
+console.log('connect mongo successful')
 
 
 const app = express()
