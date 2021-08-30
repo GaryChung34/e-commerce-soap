@@ -7,13 +7,14 @@ const route = express.Router()
 
 route.post('/signIn', async (req, res) => {
 	try {
-		console.log(User)
-		console.log(typeof User)
-		console.log(req.body.name)
+		console.log(req.body.email)
+		console.log(req.body.password)
+
 		const signInUser = await User.findOne({
-			name: req.name,
-		}).exec()
-		console.log('finish find.')
+			email: req.body.email,
+			password: req.body.password
+		})
+
 		console.log(signInUser)
 		if(signInUser) {
 			res.send({
@@ -21,7 +22,7 @@ route.post('/signIn', async (req, res) => {
 				name: signInUser.name,
 				email: signInUser.email,
 				isAdmin: signInUser.isAdmin,
-				// token: getToken(signInUser),
+				token: getToken(signInUser),
 			})
 		} else {
 			res.status(404).send({msg: 'cannot find user.'})
