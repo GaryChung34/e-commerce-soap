@@ -1,5 +1,5 @@
 import React from 'react'
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 
@@ -9,10 +9,10 @@ const initialState = {
 
 export const fetchUserSignin = createAsyncThunk(
 	'user/fetchUserSignin',
-	async () => {
+	async (userInfo) => {
 		const response = await axios.post('/api/users/signIn', {
-			name: payload.name,
-			password: payload.password
+			email: userInfo.email,
+			password: userInfo.password
 		})
 		return response.data
 	}

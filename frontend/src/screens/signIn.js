@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from 'react-redux'
 import { fetchUserSignin } from '../feature/user/userSlice.js'
 
 
-const SignIn = () => {
+const SignIn = (props) => {
 	const [ user, setUser ] = useState('')
 	const [ password, setPassword ] = useState('')
-	const userSignin = useSelector(state => state.user.userSignin)
+	const userSignin = useSelector(state => state.userSignin.userSignin)
 	const dispatch = useDispatch()
 
 	const onUserChange = (e) => {
@@ -16,17 +16,25 @@ const SignIn = () => {
 	const onPasswordChange = (e) => {
 		setPassword(e.target.value)
 	}
+  
+  const userInfo = {
+  	email: user,
+  	password: password
+  }
 
 	const handleSubmit = () => {
-		dispatch(fetchUserSignin({
-			name: user,
-			password: password
-		}))
+		dispatch(fetchUserSignin(userInfo))
 	}
 
-	useEffect({
-		if(userLogin) {
-			this.history.push('/')
+	console.log(userSignin)
+	if(userSignin) {
+		console.log('userSignin is something')
+	} else {
+		console.log('userSign is null')
+	}
+	useEffect(() => {
+		if(userSignin) {
+			props.history.push('/')
 		}
 	}, [userSignin])
 
