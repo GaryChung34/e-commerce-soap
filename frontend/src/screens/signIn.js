@@ -16,22 +16,15 @@ const SignIn = (props) => {
 	const onPasswordChange = (e) => {
 		setPassword(e.target.value)
 	}
-  
-  const userInfo = {
-  	email: user,
-  	password: password
-  }
 
-	const handleSubmit = () => {
-		dispatch(fetchUserSignin(userInfo))
+	const handleSubmit = (e) => {
+		e.preventDefault()
+		dispatch(fetchUserSignin({
+			email: user,
+			password: password
+		}))
 	}
 
-	console.log(userSignin)
-	if(userSignin) {
-		console.log('userSignin is something')
-	} else {
-		console.log('userSign is null')
-	}
 	useEffect(() => {
 		if(userSignin) {
 			props.history.push('/')
@@ -43,12 +36,25 @@ const SignIn = (props) => {
 		<div>
 			<h1>Sign-in </h1>
 			<form onSubmit={handleSubmit}>
-				<label>User:</label>
-				<input type="text" id='user' name='user'
-					onChange={onUserChange}/>
-				<label>Password:</label>
-				<input type="text" id='password' name='password'
-					onChange={onPasswordChange}/>
+				<ul>
+					<li>
+						<label>Email:</label>
+					</li>
+					<li>
+						<input type="text" id='user' name='user'
+							onChange={onUserChange}/>
+					</li>
+					<li>
+						<label>Password:</label>
+					</li>
+					<li>
+						<input type="text" id='password' name='password'
+							onChange={onPasswordChange}/>
+					</li>
+					<li>
+						<button type='submit'>Submit</button>
+					</li>
+				</ul>
 			</form>
 		</div>
 	)

@@ -4,7 +4,7 @@ import axios from 'axios'
 
 
 const initialState = {
-	userSignin: {}
+	userSignin: null
 }
 
 export const fetchUserSignin = createAsyncThunk(
@@ -23,7 +23,7 @@ const UserSlice = createSlice({
 	initialState,
 	reducers: {},
 
-	extreReducers: {
+	extraReducers: {
 		[fetchUserSignin.fulfilled]: (state, action) => {
 			state.userSignin = action.payload
 		}
