@@ -48,4 +48,20 @@ route.get('/createAdmin', async (req, res) => {
 	}
 })
 
+route.post('/register', async (req, res) => {
+	try {
+		const user = new User({
+			name: req.body.name,
+			email: req.body.email,
+			password: req.body.password,
+			isAdmin: false
+		})
+		await user.save()
+		res.send(user)
+	}
+	catch (error) {
+		res.send(error.message)
+	}
+})
+
 export default route

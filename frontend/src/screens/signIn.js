@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchUserSignin } from '../feature/user/userSlice.js'
+import { Link } from 'react-router-dom'
 
 
 const SignIn = (props) => {
@@ -56,6 +57,8 @@ const SignIn = (props) => {
 					</li>
 				</ul>
 			</form>
+			<h2>New user? let register!</h2>
+			<Link to='/register'>Register</Link>
 		</div>
 	)
 }
