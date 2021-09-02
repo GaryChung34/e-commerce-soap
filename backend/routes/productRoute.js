@@ -16,7 +16,7 @@ route.post('/', isAuth, isAdmin, async (req, res) => {
 		star: req.body.star,
 		image: req.body.image,
 		price: req.body.price,
-		ingredients: req.body.price.ingredients
+		ingredients: req.body.ingredients
 	})
 	const newProduct = await product.save()
 

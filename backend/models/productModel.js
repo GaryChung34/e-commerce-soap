@@ -6,8 +6,8 @@ const productSchema = new mongoose.Schema({
 	star: {type: Number, required: true},
 	image: {type: String, required: true},
 	price: {
-		origin: {type: Number, required: true},
-		discount: Number
+		origin: {type: mongoose.Decimal128, required: true},
+		discount: mongoose.Decimal128
 	},
 	ingredients: [String]
 })

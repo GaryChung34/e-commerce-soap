@@ -11,21 +11,24 @@ const ManageItem = (props) => {
 	const [ image, setImage ] = useState('') 
 	const [ origin, setOrigin ] = useState('')
 	const [ discount, setDiscount ] = useState('') 
-	const [ ingredients, setIngredients ] = useState('') 
+	const [ ingredient1, setIngredient1 ] = useState('') 
+	const [ ingredient2, setIngredient2 ] = useState('') 
+	const [ ingredient3, setIngredient3 ] = useState('') 
 
 	const dispatch = useDispatch()
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		dispatch(addProduct({
-			name, 
-			star,
-			image,
+
+		const ingredients = [ingredient1, ingredient2, ingredient3].filter(
+			ingredient => ingredient !== ''
+		)
+		dispatch(addProduct({name, star, image,
 			price: {
 				origin,
 				discount
 			},
-			ingredients: [ingredients]
+			ingredients: ingredients
 		}))
 	}
 
@@ -56,19 +59,31 @@ const ManageItem = (props) => {
 						<label>Original price:</label>
 					</li>
 					<li>
-						<input type='number' onChange={(e)=>{setOrigin(e.target.value)}} />
+						<input type='text' onChange={(e)=>{setOrigin(e.target.value)}} />
 					</li>
 					<li>
 						<label>Discount price:</label>
 					</li>
 					<li>
-						<input type='number' onChange={(e)=>{setDiscount(e.target.value)}} />
+						<input type='text' onChange={(e)=>{setDiscount(e.target.value)}} />
 					</li>
 					<li>
-						<label>ingredients:</label>
+						<label>ingredient 1:</label>
 					</li>
 					<li>
-						<input type='text' onChange={(e)=>{setIngredients(e.target.value)}} />
+						<input type='text' onChange={(e)=>{setIngredient1(e.target.value)}} />
+					</li>
+					<li>
+						<label>ingredient 2:</label>
+					</li>
+					<li>
+						<input type='text' onChange={(e)=>{setIngredient2(e.target.value)}} />
+					</li>
+					<li>
+						<label>ingredient 3:</label>
+					</li>
+					<li>
+						<input type='text' onChange={(e)=>{setIngredient3(e.target.value)}} />
 					</li>
 					<button type='submit'>Submit</button>
 				</ul>
