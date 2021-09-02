@@ -33,7 +33,7 @@ const ProductsSlice = createSlice({
 
 	extraReducers: {
 		[fetchProducts.fulfilled]: (state, action) => {
-			state.products = state.products.concat(action.payload)
+			state.products = action.payload
 		},
 		[addProduct.fulfilled]: (state, action) => {
 			console.log('create successful.')

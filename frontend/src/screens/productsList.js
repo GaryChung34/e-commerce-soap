@@ -9,6 +9,11 @@ const ProductsList = () => {
 	const products = useSelector(state => state.products.products)
 	const dispatch = useDispatch()
 
+	useEffect(() => {
+		dispatch(fetchProducts())
+		return () => {}
+	}, [])
+
 	const productsList = products.map(product => (
 		<Link to={`/product/${product._id}`} className="link-noDeco" key={product._id}>
 			<Product product={product} />
