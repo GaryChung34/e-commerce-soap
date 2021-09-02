@@ -10,17 +10,21 @@ route.get('/', async (req, res) => {
 	res.send(products)
 })
 
-route.post('/', isAdmin, isAuth, async (req, res) => {
+route.post('/', isAuth, isAdmin, async (req, res) => {
 	const product = new Product({
 		name: req.body.name,
+		star: req.body.star,
+		image: req.body.image,
 		price: req.body.price,
 		ingredients: req.body.price.ingredients
 	})
 	const newProduct = await product.save()
 
 	if(newProduct) {
-		res.state(201).send({msg: 'Create product success.', data: newProduct})
+		res.status(201).send({msg: 'Create product success.', data: newProduct})
 	} else {
-		res.state(500).send({msg: 'fail in creating product.'})
+		res.status(500).send({msg: 'fail in creating product.'})
 	}
 })
+
+export default route

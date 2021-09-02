@@ -14,6 +14,7 @@ import SignIn from './screens/signIn.js'
 import ProductDetail from './screens/productDetail.js'
 import SearchPage from './screens/searchPage.js'
 import Register from './screens/register.js'
+import ManageItem from './screens/manageItem.js'
 
 
 function App() {
@@ -35,7 +36,9 @@ function App() {
           <Link to='/productsList'>
             <button className="button blue-button">Products</button>
           </Link>
-          <button className="button blue-button">News</button>
+          <Link to='/manageItem'>
+            <button className="button blue-button">News</button>
+          </Link>
           <button className="button blue-button">Contact us</button>
         </div>
 
@@ -48,6 +51,7 @@ function App() {
           <Route exact path='/product/:productId' component={ProductDetail} />
           <Route exact path='/search/:searchString' component={SearchPage} />
           <Route exact path='/register' component={Register} />
+          <Route exact path='/manageItem' component={ManageItem} />
           <Redirect to='/' />
         </Switch>
       </main>

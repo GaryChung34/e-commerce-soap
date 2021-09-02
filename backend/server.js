@@ -4,7 +4,9 @@ import dotenv from 'dotenv'
 import config from './config.js'
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
+
 import usersRoute from './routes/usersRoute.js'
+import productRoute from './routes/productRoute.js'
 
 
 dotenv.config()
@@ -18,6 +20,7 @@ console.log('connect mongo successful')
 const app = express()
 app.use(bodyParser.json())
 app.use('/api/users', usersRoute)
+app.use('/api/productDB', productRoute)
 app.get('/api/products', (req, res) => {
 	res.send(data.products)
 })
