@@ -12,7 +12,7 @@ const Home = () => {
   const homeProducts = products.slice(0, 4)
 
   const productsList = homeProducts.map(product => (
-    <Link to={`/product/${product.id}`} className="link-noDeco">
+    <Link to={`/product/${product._id}`} className="link-noDeco">
       <Product product={product} />
     </Link>
   ))

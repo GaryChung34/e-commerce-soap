@@ -12,7 +12,7 @@ const ProductDetail = ({ match }) => {
 
 	const product = useSelector(state => 
 		state.products.products.find(
-			product => product.id === productId
+			product => product._id === productId
 		)
 	)
 

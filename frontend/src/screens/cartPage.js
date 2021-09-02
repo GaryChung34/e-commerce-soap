@@ -12,7 +12,7 @@ const CartPage = () => {
 
 
 	const cartRender = cartItems.map(item => {
-		const cartItem = products.find(product => product.id === item.id)
+		const cartItem = products.find(product => product._id === item.id)
 
 		return(
 			<CartItem product={cartItem} qty={item.quantity} />
@@ -22,8 +22,9 @@ const CartPage = () => {
 	const total = () => {
 		let result = 0
 		cartItems.map(item => {
-			const cartItem = products.find(product => product.id === item.id)
-			result += cartItem.price.discount * item.quantity
+			const cartItem = products.find(product => product._id === item.id)
+			console.log(cartItem)
+			result += parseFloat(cartItem.price.discount) * item.quantity
 		})
 
 		return result

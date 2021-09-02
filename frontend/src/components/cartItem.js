@@ -9,7 +9,7 @@ const CartItem = ({ product, qty }) => {
 	const dispatch = useDispatch()
 
 	const onCancel = () => {
-		dispatch(removeCart(product.id))
+		dispatch(removeCart(product._id))
 	}
 
 	return(

@@ -10,7 +10,7 @@ const ProductsList = () => {
 	const dispatch = useDispatch()
 
 	const productsList = products.map(product => (
-		<Link to={`/product/${product.id}`} className="link-noDeco" key={product.id}>
+		<Link to={`/product/${product._id}`} className="link-noDeco" key={product._id}>
 			<Product product={product} />
 		</Link>
 	))
