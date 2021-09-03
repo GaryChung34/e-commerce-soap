@@ -89,6 +89,32 @@ const ManageItem = (props) => {
 					<button type='submit'>Submit</button>
 				</ul>
 			</form>
+			<table>
+				<thead>
+					<th>id</th>
+					<th>name</th>
+					<th>star</th>
+					<th>original price</th>
+					<th>discount price</th>
+				</thead>
+				<tbody>
+				{
+					products.map(product => (
+						<tr>
+							<td>{product._id}</td>
+							<td>{product.name}</td>
+							<td>{product.star}</td>
+							<td>{product.price.origin}</td>
+							<td>{product.price.discount}</td>
+							<td>
+								<button>edit</button>
+								<button>delete</button>
+							</td>
+						</tr>
+					))
+				}
+				</tbody>
+			</table>
 		</div>
 	)
 }
