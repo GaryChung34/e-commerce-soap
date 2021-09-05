@@ -15,13 +15,22 @@ const fetchProducts = createAsyncThunk('products/fetchProducts',
 
 const addProduct = createAsyncThunk('products/addProduct', 
 	async (newProduct, { getState }) => {
-		const { userSignin } = getState()
-		console.log(userSignin)
-		const { data } = await axios.post('/api/productDB',
-			newProduct,
-			{headers: {authorization: 'Bearer ' + userSignin.userSignin.token}}
-		)
-		return data
+		if(newProduct.id){
+			const { userSignin } = getState()
+			const { data } = await axios.put(`/api/productDB/${newProduct.id}`,
+				newProduct,
+				{headers: {authorization: 'Bearer ' + userSignin.userSignin.token}}
+			)
+			return data
+		} 
+		else {
+			const { userSignin } = getState()
+			const { data } = await axios.post('/api/productDB',
+				newProduct,
+				{headers: {authorization: 'Bearer ' + userSignin.userSignin.token}}
+			)
+			return data
+		}
 	}
 )
 
@@ -36,7 +45,7 @@ const ProductsSlice = createSlice({
 			state.products = action.payload
 		},
 		[addProduct.fulfilled]: (state, action) => {
-			console.log('create successful.')
+			console.log('create/ update successful.')
 			console.log(action.payload)
 		}
 	}

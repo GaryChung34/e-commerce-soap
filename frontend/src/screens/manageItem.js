@@ -43,7 +43,7 @@ const ManageItem = (props) => {
 		const ingredients = [ingredient1, ingredient2, ingredient3].filter(
 			ingredient => ingredient !== ''
 		)
-		dispatch(addProduct({name, star, image,
+		dispatch(addProduct({id, name, star, image,
 			price: {
 				origin,
 				discount

@@ -18,13 +18,40 @@ route.post('/', isAuth, isAdmin, async (req, res) => {
 		price: req.body.price,
 		ingredients: req.body.ingredients
 	})
-	const newProduct = await product.save()
 
+	const newProduct = await product.save()
+	console.log("post method")
 	if(newProduct) {
 		res.status(201).send({msg: 'Create product success.', data: newProduct})
 	} else {
 		res.status(500).send({msg: 'fail in creating product.'})
 	}
 })
+
+route.put('/:id', isAuth, isAdmin, async (req, res) => {
+	const id = req.params.id
+	const product = await Product.findById(id)
+
+	if (product) {
+		product.name = req.body.name
+		product.star = req.body.star
+		product.image = req.body.image
+		product.price = req.body.price
+		product.ingredients = req.body.ingredients
+
+		const savedProduct = await product.save()
+		console.log('put method.')
+		if (savedProduct) {
+			res.status(200).send({msg: 'upate item successfully.', data: savedProduct})
+		} else {
+			res.status(404).send({msg: 'upatd item fail.'})
+		}
+	}
+	res.status(500).send({msg: 'item not found.'})
+})
+
+// route.delete(
+
+// )
 
 export default route
