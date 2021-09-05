@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addProduct } from '../feature/products/productsSlice.js'
+import { addProduct, fetchProducts } from '../feature/products/productsSlice.js'
 
 
 const ManageItem = (props) => {
@@ -19,6 +19,11 @@ const ManageItem = (props) => {
 
 	const dispatch = useDispatch()
 
+
+	// useEffect(() => {
+	// 	dispatch(fetchProducts())
+	// }, [])
+
 	const openModel = (product) => {
 		setModelVisible(true)
 		setId(product._id)
@@ -27,15 +32,9 @@ const ManageItem = (props) => {
 		setImage(product.image)
 		setOrigin(product.price.origin)
 		setDiscount(product.price.discount)
-		if(product.ingredients[0]){
-			setIngredient1(product.ingredients[0])
-		}
-		if(product.ingredients[1]){
-			setIngredient2(product.ingredients[1])
-		}
-		if(product.ingredients[2]){
-			setIngredient3(product.ingredients[2])
-		}
+		setIngredient1(product.ingredients[0])
+		setIngredient2(product.ingredients[1])
+		setIngredient3(product.ingredients[2])
 	}
 
 	const handleSubmit = (e) => {
@@ -56,6 +55,13 @@ const ManageItem = (props) => {
 	return (
 		<div>
 			<h1>Manage Item</h1>
+			<button onClick={() => openModel({
+				name: '', star:'', image:'',
+				price: {origin:'', discount:''}, 
+				ingredients: ['', '', '']})}>
+				create item
+			</button>	
+
 			{modelVisible &&
 				<form onSubmit={handleSubmit}>
 					<ul>
@@ -107,7 +113,7 @@ const ManageItem = (props) => {
 						<li>
 							<input type='text' onChange={(e)=>{setIngredient3(e.target.value)}} value={ingredient3}/>
 						</li>
-						<button type='submit'>Submit</button>
+						<button type='submit'>{(id)? 'Update' : 'Submit'}</button>
 						<button onClick={() => {setModelVisible(false)}}>Back</button>
 					</ul>
 				</form>

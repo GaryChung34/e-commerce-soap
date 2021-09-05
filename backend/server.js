@@ -21,9 +21,9 @@ const app = express()
 app.use(bodyParser.json())
 app.use('/api/users', usersRoute)
 app.use('/api/productDB', productRoute)
-app.get('/api/products', (req, res) => {
-	res.send(data.products)
-})
+// app.get('/api/products', (req, res) => {
+// 	res.send(data.products)
+// })
 
 app.listen('2000', () => {
 	console.log('this service is hold on port: 2000')
