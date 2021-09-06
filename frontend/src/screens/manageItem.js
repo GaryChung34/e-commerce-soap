@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addProduct, fetchProducts } from '../feature/products/productsSlice.js'
+import { addProduct, 
+	fetchProducts,
+	removeProduct  } from '../feature/products/productsSlice.js'
 
 
 const ManageItem = (props) => {
 	const products = useSelector(state => state.products.products)
 
 	const [ id, setId ] = useState('')
-	const [ name, setName ] = useState('') 
+	const [ name, setName ] = useState('')
 	const [ star, setStar ] = useState('') 
-	const [ image, setImage ] = useState('') 
+	const [ image, setImage ] = useState('')
 	const [ origin, setOrigin ] = useState('')
-	const [ discount, setDiscount ] = useState('') 
-	const [ ingredient1, setIngredient1 ] = useState('') 
-	const [ ingredient2, setIngredient2 ] = useState('') 
-	const [ ingredient3, setIngredient3 ] = useState('') 
+	const [ discount, setDiscount ] = useState('')
+	const [ ingredient1, setIngredient1 ] = useState('')
+	const [ ingredient2, setIngredient2 ] = useState('')
+	const [ ingredient3, setIngredient3 ] = useState('')
 	const [ modelVisible , setModelVisible ] = useState(false)
 
 	const dispatch = useDispatch()
@@ -51,6 +53,11 @@ const ManageItem = (props) => {
 			ingredients: ingredients
 		}))
 	}
+
+	const handleDelete = (productId) => {
+		dispatch(removeProduct(productId))
+	}
+
 
 	return (
 		<div>
@@ -137,7 +144,7 @@ const ManageItem = (props) => {
 							<td>{product.price.discount}</td>
 							<td>
 								<button onClick={() => openModel(product)}>edit</button>
-								<button>delete</button>
+								<button onClick={() => handleDelete(product._id)}>delete</button>
 							</td>
 						</tr>
 					))

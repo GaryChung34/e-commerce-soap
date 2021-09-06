@@ -50,6 +50,19 @@ route.put('/:id', isAuth, isAdmin, async (req, res) => {
 	res.status(500).send({msg: 'item not found.'})
 })
 
+route.delete('/:id', async(req, res) => {
+	const productId = req.params.id
+	const product = await Product.findById(productId)
+
+	if(product) {
+		await product.remove()
+		res.send({msg: 'remove success.'})
+	}
+	else {
+		res.send({msg: 'remove failed.'})
+	}
+})
+
 // route.delete(
 
 // )

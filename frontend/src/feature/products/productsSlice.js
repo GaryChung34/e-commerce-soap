@@ -34,6 +34,16 @@ const addProduct = createAsyncThunk('products/addProduct',
 	}
 )
 
+const removeProduct = createAsyncThunk('products/removeProdcut', 
+	async (productId, { getState }) => {
+		const { userSignin } = getState()
+		const { data } = await axios.delete(`/api/productDB/${productId}`, 
+			{headers: {authorization: 'Bearer ' + userSignin.userSignin.token}}
+		)
+		return data
+	}
+)
+
 
 const ProductsSlice = createSlice({
 	name: 'products',
@@ -53,4 +63,4 @@ const ProductsSlice = createSlice({
 
 
 export default ProductsSlice.reducer
-export { fetchProducts, addProduct }
+export { fetchProducts, addProduct, removeProduct }
