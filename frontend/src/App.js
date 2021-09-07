@@ -15,6 +15,7 @@ import ProductDetail from './screens/productDetail.js'
 import SearchPage from './screens/searchPage.js'
 import Register from './screens/register.js'
 import ManageItem from './screens/manageItem.js'
+import Shipping from './screens/shipping.js'
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
           <Route exact path='/search/:searchString' component={SearchPage} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/manageItem' component={ManageItem} />
+          <Route exact path='/shipping' component={Shipping} />
           <Redirect to='/' />
         </Switch>
       </main>

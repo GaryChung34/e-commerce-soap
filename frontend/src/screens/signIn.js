@@ -10,6 +10,9 @@ const SignIn = (props) => {
 	const userSignin = useSelector(state => state.userSignin.userSignin)
 	const dispatch = useDispatch()
 
+	const queryStr = props.location.search
+	const redirect = queryStr? queryStr.split('=')[1] : '/' 
+
 	const onUserChange = (e) => {
 		setUser(e.target.value)
 	}
@@ -28,7 +31,7 @@ const SignIn = (props) => {
 
 	useEffect(() => {
 		if(userSignin) {
-			props.history.push('/')
+			props.history.push(redirect)
 		}
 	}, [userSignin])
 

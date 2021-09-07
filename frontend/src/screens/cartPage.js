@@ -5,7 +5,7 @@ import { addCart } from '../feature/cart/cartSlice.js'
 import CartItem from '../components/cartItem.js'
 
 
-const CartPage = () => {
+const CartPage = (props) => {
 	const cartItems = useSelector(state => state.cart)
 	const products = useSelector(state => state.products.products)
 	const dispatch = useDispatch()
@@ -30,11 +30,16 @@ const CartPage = () => {
 		return result
 	}
 
+	const handleCheckout = () => {
+		props.history.push('/signIn?redirect=/shipping')
+	}
+
 	return(
 		<div className='cartList'>
 			<h1>Cart: </h1>
 			{cartRender}
 			<h2>Total:&nbsp;${total()}</h2>
+			<button onClick={handleCheckout}>Checkout</button>
 		</div>
 	)
 }
