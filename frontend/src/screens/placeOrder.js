@@ -11,6 +11,9 @@ const PlaceOrder = () => {
 	const products = useSelector(state => state.products.products)
 	const [ deliveryFee, setDeliveryFee ] = useState('10')
 
+
+
+
 	const cartRender = cartItems.map(item => {
 		const cartItem = products.find(product => product._id === item.id)
 
@@ -18,6 +21,7 @@ const PlaceOrder = () => {
 			<CartItem product={cartItem} qty={item.quantity} />
 		)
 	})
+
 
 	return (
 		<div>
@@ -38,6 +42,7 @@ const PlaceOrder = () => {
 			<h2>Order Summary:</h2>
 			<div>Items: ${cartTotalPrice(cartItems, products)}</div>
 			<div>Delivery fee: ${deliveryFee}</div>
+			<button>Purchase Order</button>
 
 		</div>
 	)
