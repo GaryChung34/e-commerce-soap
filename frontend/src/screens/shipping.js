@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import CheckoutStep from '../components/checkoutStep.js'
 
 
 const Shipping = () => {
@@ -11,6 +12,7 @@ const Shipping = () => {
 	return (
 		<div>
 			<h1>Shipping Detail</h1>
+			<CheckoutStep step1 step2/>
 			<form>
 				<ul>
 					<li>

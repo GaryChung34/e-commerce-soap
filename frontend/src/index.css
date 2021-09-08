@@ -336,4 +336,18 @@ body {
   margin: 0px 10px;
 }
 
+/*Checkout Step*/
+.checkoutStep {
+  display: flex;
+}
 
+.checkoutStep > div {
+  padding: 5px 10px;
+  color: darkgrey;
+  border-top: 2px solid darkgrey;
+}
+
+.checkoutStep > div.active {
+  color: darkorange;
+  border-color: darkorange;
+}
