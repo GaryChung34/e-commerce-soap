@@ -6,7 +6,7 @@ import CartItem from '../components/cartItem.js'
 
 
 const CartPage = (props) => {
-	const cartItems = useSelector(state => state.cart)
+	const cartItems = useSelector(state => state.cart.cart)
 	const products = useSelector(state => state.products.products)
 	const dispatch = useDispatch()
 
