@@ -16,6 +16,8 @@ import SearchPage from './screens/searchPage.js'
 import Register from './screens/register.js'
 import ManageItem from './screens/manageItem.js'
 import Shipping from './screens/shipping.js'
+import Payment from './screens/payment.js'
+import PlaceOrder from './screens/placeOrder.js'
 
 
 function App() {
@@ -54,6 +56,8 @@ function App() {
           <Route exact path='/register' component={Register} />
           <Route exact path='/manageItem' component={ManageItem} />
           <Route exact path='/shipping' component={Shipping} />
+          <Route exact path='/payment' component={Payment} />
+          <Route exact path='/placeOrder' component={PlaceOrder} />
           <Redirect to='/' />
         </Switch>
       </main>
