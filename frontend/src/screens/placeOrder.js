@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import CartItem from '../components/cartItem.js'
 import { cartTotalPrice } from './cartPage.js'
+import CheckoutStep from '../components/checkoutStep.js'
 
 
 const PlaceOrder = (props) => {
@@ -31,6 +32,7 @@ const PlaceOrder = (props) => {
 	return (
 		<div>
 			<h1>Place Order:</h1>
+			<CheckoutStep step1 step2 step3 step4 />
 			<h2>Shipping Address:</h2>
 			<div>
 			{shipping.address},&nbsp; 

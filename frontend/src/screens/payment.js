@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { savePayment } from '../feature/cart/cartSlice.js'
+import CheckoutStep from '../components/checkoutStep.js'
 
 
 const Payment = (props) => {
@@ -36,6 +37,7 @@ const Payment = (props) => {
 	return (
 		<div>
 			<h1>Payment Method:</h1>
+			<CheckoutStep step1 step2 step3 />
 			{emptyWarn && <div style={{color: 'red'}}>There is/are empty field.</div>}
 			<form onSubmit={handleContinue}>
 				<ul>
