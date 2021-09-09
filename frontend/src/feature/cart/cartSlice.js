@@ -4,8 +4,15 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
 	cart: [],
-	shipping: {},
-	payment: {}
+	shipping: {
+		address: '',
+		building: '',
+		roadNo: '',
+		district: ''
+	},
+	payment: {
+		paymentMethod: ''
+	}
 }
 
 const CartSlice = createSlice({
