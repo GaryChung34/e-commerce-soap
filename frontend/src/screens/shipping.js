@@ -1,25 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import CheckoutStep from '../components/checkoutStep.js'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { saveShipping } from '../feature/cart/cartSlice.js'
 
 
 const Shipping = (props) => {
 	const [ address, setAddress ] = useState('')
-	const [ city, setCity ] = useState('')
-	const [ pCode, setPCode ] = useState('')
-	const [ country, setCountry ] = useState('')
+	const [ building, setBuilding ] = useState('')
+	const [ roadNo, setRoadNo ] = useState('')
+	const [ district, setDistrict ] = useState('')
 	const [ emptyWarn, setEmptyWarn ] = useState(false)
+
+	const shipping = useSelector(state => state.cart.shipping)
 	const dispatch = useDispatch()
+	const queryStr = props.location.search
+
+
+	if (shipping.address && !queryStr) {
+		props.history.push('payment')
+	}
 
 	const handleContinue = (e) => {
 		e.preventDefault()
-		if(address!=='' && city!=='' && pCode!=='' && country!=='') {
+		if(address!=='' && building!=='' && roadNo!=='' && district!=='') {
 			dispatch(saveShipping({
 				address,
-				city,
-				pCode,
-				country
+				building,
+				roadNo,
+				district
 			}))
 			props.history.push('payment')
 		} 
@@ -27,6 +35,17 @@ const Shipping = (props) => {
 			setEmptyWarn(true)
 		}
 	}
+
+	const fetchShipping = () => {
+		setAddress(shipping.address)
+		setBuilding(shipping.building)
+		setRoadNo(shipping.roadNo)
+		setDistrict(shipping.district)
+	}
+
+	useEffect(() => {
+		fetchShipping()
+	}, [])
 
 	return (
 		<div>
@@ -39,25 +58,25 @@ const Shipping = (props) => {
 						<label>Address:</label>
 					</li>
 					<li>
-						<input type='text' onChange={(e) => setAddress(e.target.value)} />
+						<input type='text' onChange={(e) => setAddress(e.target.value)} value={address} />
 					</li>
 					<li>
-						<label>City:</label>
+						<label>Building:</label>
 					</li>
 					<li>
-						<input type='text' onChange={(e) => setCity(e.target.value)} />
+						<input type='text' onChange={(e) => setBuilding(e.target.value)} value={building} />
 					</li>
 					<li>
-						<label>Postal code:</label>
+						<label>Road no.:</label>
 					</li>
 					<li>
-						<input type='text' onChange={(e) => setPCode(e.target.value)} />
+						<input type='text' onChange={(e) => setRoadNo(e.target.value)} value={roadNo} />
 					</li>
 					<li>
-						<label>Country:</label>
+						<label>District:</label>
 					</li>
 					<li>
-						<input type='text' onChange={(e) => setCountry(e.target.value)} />
+						<input type='text' onChange={(e) => setDistrict(e.target.value)} value={district} />
 					</li>
 					<li>
 						<button type='submit'>Submit</button>
