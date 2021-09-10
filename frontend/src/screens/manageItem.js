@@ -34,9 +34,23 @@ const ManageItem = (props) => {
 		setImage(product.image)
 		setOrigin(product.price.origin)
 		setDiscount(product.price.discount)
-		setIngredient1(product.ingredients[0])
-		setIngredient2(product.ingredients[1])
-		setIngredient3(product.ingredients[2])
+		if(product.ingredients[0]) {
+			setIngredient1(product.ingredients[0])
+		} else {
+			setIngredient1('')
+		}
+
+		if(product.ingredients[1]) {
+			setIngredient2(product.ingredients[1])
+		} else {
+			setIngredient2('')
+		}
+
+		if(product.ingredients[2]) {
+			setIngredient3(product.ingredients[2])
+		} else {
+			setIngredient3('')
+		}
 	}
 
 	const handleSubmit = (e) => {

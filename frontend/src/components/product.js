@@ -29,7 +29,8 @@ export const showIngredient = (ingredientsList) => {
         <Link to='' className='link-inde'>
           <FontAwesomeIcon icon={faSeedling} />
           <span>{ingredientsList[x]}</span>
-        </Link>,
+        </Link>
+        {(ingredientsList.length - 1 != x)? ',' : ''}
         <span>&nbsp;&nbsp;</span>
       </React.Fragment>
     )
