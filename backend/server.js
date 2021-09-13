@@ -7,6 +7,7 @@ import bodyParser from 'body-parser'
 
 import usersRoute from './routes/usersRoute.js'
 import productRoute from './routes/productRoute.js'
+import orderRoute from './routes/orderRoute.js'
 
 
 dotenv.config()
@@ -21,6 +22,7 @@ const app = express()
 app.use(bodyParser.json())
 app.use('/api/users', usersRoute)
 app.use('/api/productDB', productRoute)
+app.use('/api/orders', orderRoute)
 // app.get('/api/products', (req, res) => {
 // 	res.send(data.products)
 // })

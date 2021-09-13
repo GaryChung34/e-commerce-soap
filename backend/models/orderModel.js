@@ -15,8 +15,8 @@ const orderSchema = new mongoose.Schema({
 			Name: {type: String, required: true},
 			id: {type: mongoose.Schema.Types.ObjectId,
 				ref: 'Product', 
-				required: true
-			}
+				required: true,
+			},
 			quantity: {type: Number, required: true},
 			price: {type: String, required: true}
 		}
@@ -24,7 +24,7 @@ const orderSchema = new mongoose.Schema({
 	userId: {type: mongoose.Schema.Types.ObjectId,
 		ref: 'User',
 		required: true
-	}
+	},
 	totalPrice: {type: String, required: true},
 	shippingPrice: {type: String, required: true},
 	isPaid: {type: Boolean, required: true},
@@ -32,4 +32,6 @@ const orderSchema = new mongoose.Schema({
 })
 
 const OrderModel = mongoose.model('Order', orderSchema)
+
+export default OrderModel
 
