@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import CartItem from '../components/cartItem.js'
 import { cartTotalPrice } from './cartPage.js'
 import CheckoutStep from '../components/checkoutStep.js'
+import { createOrder } from '../feature/orders/ordersSlice.js'
 
 
 const PlaceOrder = (props) => {
@@ -11,6 +12,7 @@ const PlaceOrder = (props) => {
 	const cartItems = useSelector(state => state.cart.cart)
 	const products = useSelector(state => state.products.products)
 	const [ deliveryFee, setDeliveryFee ] = useState('10')
+	const dispatch = useDispatch()
 
 
 	const cartRender = cartItems.map(item => {
@@ -27,6 +29,10 @@ const PlaceOrder = (props) => {
 
 	const handlePaymentEdit = () => {
 		props.history.push('payment?from=edit')
+	}
+
+	const handlePlaceOrder = () => {
+		dispatch()
 	}
 
 	return (
@@ -52,7 +58,7 @@ const PlaceOrder = (props) => {
 			<h2>Order Summary:</h2>
 			<div>Items: ${cartTotalPrice(cartItems, products)}</div>
 			<div>Delivery fee: ${deliveryFee}</div>
-			<button>Purchase Order</button>
+			<button onClick={handlePlaceOrder}>Purchase Order</button>
 
 		</div>
 	)
