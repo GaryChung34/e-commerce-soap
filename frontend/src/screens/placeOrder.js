@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import CartItem from '../components/cartItem.js'
 import { cartTotalPrice } from './cartPage.js'
@@ -12,6 +12,7 @@ const PlaceOrder = (props) => {
 	const cartItems = useSelector(state => state.cart.cart)
 	const products = useSelector(state => state.products.products)
 	const { userSignin } = useSelector(state => state.userSignin)
+	const { success, order } = useSelector(state => state.orderCreate)
 
 	const [ deliveryFee, setDeliveryFee ] = useState('10')
 	const dispatch = useDispatch()
@@ -45,6 +46,12 @@ const PlaceOrder = (props) => {
 			isDelivered: false
 		}))
 	}
+
+	useEffect(() => {
+		if(success) {
+			props.history.push(`/orderDetail/${order._id}`)
+		}
+	}, [success, order])
 
 	return (
 		<div>

@@ -25,5 +25,19 @@ route.post('/', async (req, res) => {
 	}
 })
 
+route.get('/:orderId', async (req, res) => {
+	const orderId = req.params.orderId
+	const order = await Order.findById(orderId)
+
+	if(order) {
+		console.log(order)
+		res.send(order)
+	} else {
+		res.status(404).send({msg: 'order not found.'})
+	}
+})
+
+
+
 export default route
 

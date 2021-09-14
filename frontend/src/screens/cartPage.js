@@ -5,14 +5,14 @@ import { addCart } from '../feature/cart/cartSlice.js'
 import CartItem from '../components/cartItem.js'
 
 const cartTotalPrice = (cartItems, products) => {
-		let result = 0
-		cartItems.map(item => {
-			const cartItem = products.find(product => product._id === item.id)
-			result += parseFloat(cartItem.price.discount) * item.quantity
-		})
+	let result = 0
+	cartItems.map(item => {
+		const cartItem = products.find(product => product._id === item.id)
+		result += parseFloat(cartItem.price.discount) * item.quantity
+	})
 
-		return result
-	}
+	return result
+}
 
 const CartPage = (props) => {
 	const cartItems = useSelector(state => state.cart.cart)
