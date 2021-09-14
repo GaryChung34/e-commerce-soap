@@ -4,7 +4,7 @@ import Axios from 'axios'
 
 const initialState = {}
 
-const getOrderDetails = createAsyncThunk('orders/getOrderDetail',
+const getOrderDetail = createAsyncThunk('orders/getOrderDetail',
 	async (orderId, { getState }) => {
 		const { userSignin } = getState()
 		const { data } = await Axios.get('/api/orders/', orderId, 
@@ -27,5 +27,5 @@ const OrderDetail = createSlice({
 	}
 })
 
-export default OrderDetail
-export { getOrderDetails }
+export default OrderDetail.reducer
+export { getOrderDetail }

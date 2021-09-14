@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import ProductsReducer from '../feature/products/productsSlice.js'
 import CartReducer from '../feature/cart/cartSlice.js'
 import UserReducer from '../feature/user/userSlice.js'
-import OrdersReducer from '../feature/orders/ordersSlice.js'
+import OrderCreateReducer from '../feature/orders/orderCreateSlice.js'
 
 
 export const store = configureStore({
@@ -10,6 +10,6 @@ export const store = configureStore({
 		products: ProductsReducer,
 		cart: CartReducer,
 		userSignin: UserReducer,
-		ordersSlice: OrdersReducer
+		orderCreate: OrderCreateReducer
 	},
 })

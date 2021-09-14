@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import CartItem from '../components/cartItem.js'
 import { cartTotalPrice } from './cartPage.js'
 import CheckoutStep from '../components/checkoutStep.js'
-import { createOrder } from '../feature/orders/ordersSlice.js'
+import { createOrder } from '../feature/orders/orderCreateSlice.js'
 
 
 const PlaceOrder = (props) => {
