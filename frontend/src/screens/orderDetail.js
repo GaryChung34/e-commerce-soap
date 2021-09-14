@@ -10,9 +10,6 @@ const OrderDetail = ({ match }) => {
 	const orderDetail = useSelector(state => state.orderDetail.orderDetail)
 	const { address, payment, orderItems } = orderDetail
 
-	console.log(orderItems)
-	console.log(orderId)
-
 	const dispatch = useDispatch()
 
 
@@ -24,7 +21,6 @@ const OrderDetail = ({ match }) => {
 	})
 
 	useEffect(() => {
-		console.log('useEffect')
 		dispatch(getOrderDetail(orderId))
 	}, [])
 

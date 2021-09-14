@@ -23,7 +23,6 @@ const OrderCreate = createSlice({
 	reducers: {},
 	extraReducers: {
 		[createOrder.fulfilled]: (state, action) => {
-			console.log('run createOrder reducers.')
 			state.success = true
 			state.order = action.payload.data
 		}
