@@ -2,7 +2,10 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import Axios from 'axios'
 
 
-const initialState = {} 
+const initialState = {
+	success: null,
+	order: {}
+} 
 
 const createOrder = createAsyncThunk('orders/createOrder',
 	async (newOrder, { getState }) => {
@@ -20,10 +23,9 @@ const OrderSlice = createSlice({
 	reducers: {},
 	extraReducers: {
 		[createOrder.fulfilled]: (state, action) => {
-			state = {
-				success: true,
-				order: action.payload
-			}
+			console.log('run createOrder reducers.')
+			state.success = true
+			state.order = action.payload.data
 		}
 	}
 })

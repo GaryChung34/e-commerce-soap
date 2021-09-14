@@ -37,7 +37,7 @@ const PlaceOrder = (props) => {
 		dispatch(createOrder({
 			address: shipping,
 			payment: payment,
-			orderItem: cartItems,
+			orderItems: cartItems,
 			userId: userSignin._id, 
 			totalPrice: totalFee,
 			shippingPrice: deliveryFee,
