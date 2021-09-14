@@ -26,6 +26,10 @@ app.use('/api/orders', orderRoute)
 // app.get('/api/products', (req, res) => {
 // 	res.send(data.products)
 // })
+app.get('/api/paypal', (req, res) => {
+	console.log(config.PAYPAL_CLIENT_ID)
+	res.send({clientId: config.PAYPAL_CLIENT_ID})
+})
 
 app.listen('2000', () => {
 	console.log('this service is hold on port: 2000')
