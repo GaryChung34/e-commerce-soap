@@ -36,9 +36,19 @@ const OrderDetail = ({ match }) => {
 			{address.roadNo},&nbsp; 
 			{address.district}
 			</div>
+			{
+				(orderDetail.isDeliveried)?
+				<div className='msgBox-info'>Deliveried</div> :
+				<div className='msgBox-danger'>Have not arrived</div>
+			}
 
 			<h2>Payment Method:</h2>
 			<div>{payment.paymentMethod}</div>
+			{
+				(orderDetail.isPaid)?
+				<div className='msgBox-info'>Paid</div> :
+				<div className='msgBox-danger'>Not Paid</div>
+			}
 
 			<h2>Order Item:</h2>
 			{cartRender}
