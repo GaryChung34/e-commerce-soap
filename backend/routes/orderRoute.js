@@ -9,7 +9,7 @@ route.post('/', async (req, res) => {
 	const order = new Order({
 		address: req.body.address,
 		payment: req.body.payment,
-		orderItem: req.body.orderItem,
+		orderItems: req.body.orderItems,
 		userId: req.body.userId,
 		totalPrice: req.body.totalPrice,
 		shippingPrice: req.body.shippingPrice,
