@@ -8,16 +8,18 @@ import { createOrder } from '../feature/orders/ordersSlice.js'
 
 const PlaceOrder = (props) => {
 	const shipping = useSelector(state => state.cart.shipping)
-	const { paymentMethod } = useSelector(state => state.cart.payment)
+	const payment = useSelector(state => state.cart.payment)
 	const cartItems = useSelector(state => state.cart.cart)
 	const products = useSelector(state => state.products.products)
+	const { userSignin } = useSelector(state => state.userSignin)
+
 	const [ deliveryFee, setDeliveryFee ] = useState('10')
 	const dispatch = useDispatch()
 
+	const totalFee = cartTotalPrice(cartItems, products)
 
 	const cartRender = cartItems.map(item => {
 		const cartItem = products.find(product => product._id === item.id)
-
 		return(
 			<CartItem product={cartItem} qty={item.quantity} />
 		)
@@ -32,7 +34,16 @@ const PlaceOrder = (props) => {
 	}
 
 	const handlePlaceOrder = () => {
-		dispatch()
+		dispatch(createOrder({
+			address: shipping,
+			payment: payment,
+			orderItem: cartItems,
+			userId: userSignin._id, 
+			totalPrice: totalFee,
+			shippingPrice: deliveryFee,
+			isPaid: false,
+			isDelivered: false
+		}))
 	}
 
 	return (
@@ -49,14 +60,14 @@ const PlaceOrder = (props) => {
 			<button onClick={handleAddressEdit}>Edit</button>
 
 			<h2>Payment Method:</h2>
-			<div>{paymentMethod}</div>
+			<div>{payment.paymentMethod}</div>
 			<button onClick={handlePaymentEdit}>Edit</button>
 
 			<h2>Order Item:</h2>
 			{cartRender}
 
 			<h2>Order Summary:</h2>
-			<div>Items: ${cartTotalPrice(cartItems, products)}</div>
+			<div>Items: ${totalFee}</div>
 			<div>Delivery fee: ${deliveryFee}</div>
 			<button onClick={handlePlaceOrder}>Purchase Order</button>
 

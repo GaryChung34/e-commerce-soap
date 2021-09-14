@@ -4,7 +4,6 @@ import Axios from 'axios'
 
 const initialState = {} 
 
-
 const createOrder = createAsyncThunk('orders/createOrder',
 	async (newOrder, { getState }) => {
 		const { userSignin } = getState()
@@ -28,7 +27,6 @@ const OrderSlice = createSlice({
 		}
 	}
 })
-
 
 
 export default OrderSlice.reducer
