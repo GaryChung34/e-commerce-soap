@@ -20,7 +20,10 @@ const Home = () => {
 	return (
 		<div className='grid'>
 			<div className="center">
-	      <img src="//placehold.it/1000x600" />
+	      <img className="banner-image" 
+          src="images/soap-banner.jpg" 
+          alt="Soap-Banner-image" 
+        />
 	    </div>
 
       <div className="heading">
