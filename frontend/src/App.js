@@ -41,7 +41,7 @@ function App() {
             <button className="button blue-button">Products</button>
           </Link>
           <Link to='/manageItem'>
-            <button className="button blue-button">News</button>
+            <button className="button blue-button">Manage</button>
           </Link>
           <button className="button blue-button">Contact us</button>
         </div>
