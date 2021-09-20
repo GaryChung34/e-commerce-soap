@@ -10,9 +10,9 @@ import productRoute from './routes/productRoute.js'
 import orderRoute from './routes/orderRoute.js'
 
 
-dotenv.config()
+console.log(config.MONGODB_URL)
+
 const mongodbUrl = config.MONGODB_URL
-console.log(mongodbUrl)
 mongoose.connect(mongodbUrl, {
 	useNewUrlParser: true
 }).catch(error => console.log(error.reason))
