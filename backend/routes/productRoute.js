@@ -1,7 +1,7 @@
 import express from 'express'
 import Product from '../models/productModel.js'
 import { isAdmin, isAuth } from '../util.js'
-import babelPolyFill from '@babel-polyfill'
+import babelPolyFill from '@babel/polyfill'
 
 
 const route = express.Router()
