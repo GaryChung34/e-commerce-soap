@@ -24,6 +24,7 @@
   "homepage": "https://github.com/GaryChung34/e-commerce-soap#readme",
   "dependencies": {
     "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
     "body-parser": "^1.19.0",
     "jsonwebtoken": "^8.5.1",
     "dotenv": "^10.0.0",
