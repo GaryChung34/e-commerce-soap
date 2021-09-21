@@ -1,7 +1,7 @@
 import express from 'express'
 import User from '../models/usersModel.js'
 import { getToken } from '../util.js'
-import babelPolyFill from 'babel-polyfill'
+import babelPolyFill from '@babel-polyfill'
 
 
 const route = express.Router()
