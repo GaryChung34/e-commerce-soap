@@ -1,7 +1,7 @@
 import Order from '../models/orderModel.js'
 import express from 'express'
 import { isAdmin, isAuth } from '../util.js'
-import "babel-polyfill"
+import babelPolyFill from 'babel-polyfill'
 
 
 const route = express.Router()
