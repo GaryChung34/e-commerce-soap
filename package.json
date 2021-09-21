@@ -4,7 +4,8 @@
   "description": "This is my first e-commerce website to sell fine hand-made soap :)",
   "main": "backend.js",
   "scripts": {
-    "start": "nodemon --watch backend --exec babel-node backend/server.js",
+    "start": "node --exec babel-node backend/server.js",
+    "dev": "nodemon --watch backend --exec babel-node backend/server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "repository": {
