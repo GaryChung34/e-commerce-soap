@@ -33,6 +33,7 @@ app.get('/api/paypal', (req, res) => {
 	res.send({clientId: config.PAYPAL_CLIENT_ID})
 })
 
+
 // serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
 
