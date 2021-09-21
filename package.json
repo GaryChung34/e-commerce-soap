@@ -7,7 +7,6 @@
     "clean": "rm -rf build && mkdir build",
     "build-babel": "babel -d ./build ./backend -s",
     "build": "npm run clean && npm run build-babel",
-
     "start": "npm run build && node ./build/server.js",
     "dev": "nodemon --watch backend --exec babel-node backend/server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
@@ -27,7 +26,7 @@
     "@babel/core": "^7.15.0",
     "@babel/node": "^7.14.9",
     "@babel/preset-env": "^7.15.0",
-    "@babel/polyfill": "^6.0.16",
+    "@babel/polyfill": "7.0.0",
     "body-parser": "^1.19.0",
     "jsonwebtoken": "^8.5.1",
     "dotenv": "^10.0.0",
