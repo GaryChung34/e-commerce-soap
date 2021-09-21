@@ -4,7 +4,7 @@
   "description": "This is my first e-commerce website to sell fine hand-made soap :)",
   "main": "backend.js",
   "scripts": {
-    "start": "node backend/server.js",
+    "start": "node --exec babel-node backend/server.js",
     "dev": "nodemon --watch backend --exec babel-node backend/server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
@@ -19,6 +19,12 @@
   },
   "homepage": "https://github.com/GaryChung34/e-commerce-soap#readme",
   "dependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.15.0",
+    "body-parser": "^1.19.0",
+    "jsonwebtoken": "^8.5.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^6.0.1"
