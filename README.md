@@ -7,9 +7,9 @@ This is my first full stack e-commerce website to sell fine hand-made soap with 
 - product place order
 - manage items
 - search bar
-<p>;nbsp&</p>
+<p>&nbsp;</p>
 Let's check out my live demo🐋: https://murmuring-wildwood-12135.herokuapp.com/
-Admin User: gary@gary.com , PW: password
+<p>Admin User: gary@gary.com , PW: password</p>
 
 # Basic Feature
 https://user-images.githubusercontent.com/87843133/133896847-a1fb7d1e-e326-410d-964a-2dd19ecf2614.mp4
