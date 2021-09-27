@@ -7,6 +7,7 @@ import { addProduct,
 
 const ManageItem = (props) => {
 	const { products, removeSuccess, addSuccess } = useSelector(state => state.products)
+	const userSignin = useSelector(state => state.userSignin.userSignin)
 
 	const [ id, setId ] = useState('')
 	const [ name, setName ] = useState('')
@@ -18,6 +19,7 @@ const ManageItem = (props) => {
 	const [ ingredient2, setIngredient2 ] = useState('')
 	const [ ingredient3, setIngredient3 ] = useState('')
 	const [ modelVisible , setModelVisible ] = useState(false)
+	const [ notAdminWarn , setNotAdminWarn ] = useState(false)
 
 	const dispatch = useDispatch()
 
@@ -56,26 +58,35 @@ const ManageItem = (props) => {
 	const handleSubmit = (e) => {
 		e.preventDefault()
 
-		const ingredients = [ingredient1, ingredient2, ingredient3].filter(
-			ingredient => ingredient !== ''
-		)
-		dispatch(addProduct({id, name, star, image,
-			price: {
-				origin,
-				discount
-			},
-			ingredients: ingredients
-		}))
+		if(userSignin.isAdmin) {
+			const ingredients = [ingredient1, ingredient2, ingredient3].filter(
+				ingredient => ingredient !== ''
+			)
+			dispatch(addProduct({id, name, star, image,
+				price: {
+					origin,
+					discount
+				},
+				ingredients: ingredients
+			}))
+		} else {
+			setNotAdminWarn(true)
+		}
 	}
 
 	const handleDelete = (productId) => {
-		dispatch(removeProduct(productId))
+		if(userSignin.isAdmin) { 
+			dispatch(removeProduct(productId))
+		} else {
+			setNotAdminWarn(true)
+		}
 	}
 
 
 	return (
 		<div>
 			<h1>Manage Item</h1>
+			{notAdminWarn && <h2 style={{color: "red"}}>You are not authorized to edit!</h2>}
 			<button onClick={() => openModel({
 				name: '', star:'', image:'',
 				price: {origin:'', discount:''}, 

@@ -40,7 +40,7 @@ function App() {
           <Link to='/productsList'>
             <button className="button blue-button">Products</button>
           </Link>
-          <Link to='/manageItem'>
+          <Link to='/signIn?redirect=/manageItem'>
             <button className="button blue-button">Manage</button>
           </Link>
           <button className="button blue-button">Contact us</button>
