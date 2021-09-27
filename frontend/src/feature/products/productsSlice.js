@@ -4,7 +4,9 @@ import axios from 'axios'
 
 
 const initialState = {
-	products: []
+	products: [],
+	removeSuccess: false,
+	addSuccess: false
 }
 
 const fetchProducts = createAsyncThunk('products/fetchProducts', 
@@ -54,9 +56,19 @@ const ProductsSlice = createSlice({
 		[fetchProducts.fulfilled]: (state, action) => {
 			state.products = action.payload
 		},
+
+		[addProduct.pending]: (state, action) => {
+			state.addSuccess = false
+		},
 		[addProduct.fulfilled]: (state, action) => {
-			console.log('create/ update successful.')
-			console.log(action.payload)
+			state.addSuccess = true
+		},
+
+		[removeProduct.pending]: (state, action) => {
+			state.removeSuccess = false
+		},
+		[removeProduct.fulfilled]: (state, action) => {
+			state.removeSuccess = true
 		}
 	}
 })

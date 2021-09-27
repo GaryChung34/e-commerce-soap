@@ -6,7 +6,7 @@ import { addProduct,
 
 
 const ManageItem = (props) => {
-	const products = useSelector(state => state.products.products)
+	const { products, removeSuccess, addSuccess } = useSelector(state => state.products)
 
 	const [ id, setId ] = useState('')
 	const [ name, setName ] = useState('')
@@ -22,9 +22,9 @@ const ManageItem = (props) => {
 	const dispatch = useDispatch()
 
 
-	// useEffect(() => {
-	// 	dispatch(fetchProducts())
-	// }, [])
+	useEffect(() => {
+		dispatch(fetchProducts())
+	}, [removeSuccess, addSuccess])
 
 	const openModel = (product) => {
 		setModelVisible(true)
