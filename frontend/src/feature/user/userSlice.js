@@ -5,7 +5,8 @@ import axios from 'axios'
 
 const initialState = {
 	userSignin: null,
-	userRegister: null
+	userRegister: null,
+	signInWarn: false
 }
 
 export const fetchUserSignin = createAsyncThunk(
@@ -43,6 +44,10 @@ const UserSlice = createSlice({
 	extraReducers: {
 		[fetchUserSignin.fulfilled]: (state, action) => {
 			state.userSignin = action.payload
+			state.signInWarn = false
+		},
+		[fetchUserSignin.rejected]: (state, action) => {
+			state.signInWarn = true
 		},
 		[fetchRegister.fulfilled]: (state, action) => {
 			state.userRegister = action.payload

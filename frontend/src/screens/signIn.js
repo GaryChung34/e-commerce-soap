@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const SignIn = (props) => {
 	const [ user, setUser ] = useState('')
 	const [ password, setPassword ] = useState('')
-	const userSignin = useSelector(state => state.userSignin.userSignin)
+	const { userSignin, signInWarn } = useSelector(state => state.userSignin)
 	const dispatch = useDispatch()
 
 	const queryStr = props.location.search
@@ -33,12 +33,15 @@ const SignIn = (props) => {
 		if(userSignin) {
 			props.history.push(redirect)
 		}
-	}, [userSignin])
+	}, [userSignin, signInWarn])
 
 
 	return(
 		<div>
 			<h1>Sign-in </h1>
+			{signInWarn &&
+				<h2 style={{color: "red"}}>Incorrect user name or password!</h2>
+			}
 			<form onSubmit={handleSubmit}>
 				<ul>
 					<li>
