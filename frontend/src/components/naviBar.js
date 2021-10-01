@@ -2,13 +2,20 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
+import { removeUser } from '../feature/user/userSlice.js'
 import SearchBar from './searchBar.js'
 
 
-const NaviBar = () => {
+const NaviBar = (props) => {
 	const userSignin = useSelector(state => state.userSignin.userSignin)
+	const dispatch = useDispatch()
+
+	const handleLogOut = () => {
+		dispatch(removeUser())
+		// props.history.push('/')
+	}
 
 	return (
 		<header className="header">
@@ -33,6 +40,11 @@ const NaviBar = () => {
 			        	Login
 			        </Link>
 		      	)
+	      	}
+	      	{userSignin &&
+	      		<button className="header-button" onClick={handleLogOut}>
+	      			Log out
+	      		</button>
 	      	}
         </div>
       </div>

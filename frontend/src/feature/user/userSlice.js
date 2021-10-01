@@ -34,7 +34,11 @@ export const fetchRegister = createAsyncThunk(
 const UserSlice = createSlice({
 	name: 'userSignin',
 	initialState,
-	reducers: {},
+	reducers: {
+		removeUser(state, action) {
+			state.userSignin = null
+		},
+	},
 
 	extraReducers: {
 		[fetchUserSignin.fulfilled]: (state, action) => {
@@ -47,3 +51,4 @@ const UserSlice = createSlice({
 })
 
 export default UserSlice.reducer
+export const { removeUser } = UserSlice.actions
