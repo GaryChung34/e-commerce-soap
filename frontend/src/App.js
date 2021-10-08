@@ -19,13 +19,14 @@ import Shipping from './screens/shipping.js'
 import Payment from './screens/payment.js'
 import PlaceOrder from './screens/placeOrder.js'
 import OrderDetail from './screens/orderDetail.js'
+import TestPage from './screens/testPage.js'
 
 
 function App() {
 
   return (
     <Router>
-      <div className="grid-container">
+      <div className="grid-container bg-gray-50">
       <NaviBar />
 
       <main className="main">
@@ -61,6 +62,7 @@ function App() {
           <Route exact path='/payment' component={Payment} />
           <Route exact path='/placeOrder' component={PlaceOrder} />
           <Route exact path='/orderDetail/:orderId' component={OrderDetail} />
+          <Route exact path='/testPage' component={TestPage} />
           <Redirect to='/' />
         </Switch>
       </main>

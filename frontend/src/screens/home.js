@@ -27,7 +27,7 @@ const Home = () => {
 	    </div>
 
       <div className="heading">
-        <h2>Favorites:</h2>
+        <h2 className="text-xl">Favorites:</h2>
       </div>
 
       <div className="all-products" style={{flexWrap:'nowrap'}}>

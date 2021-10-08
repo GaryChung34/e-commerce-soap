@@ -25,7 +25,7 @@ const SearchPage = ({ match }) => {
 
 	let renderList
 	if (!searchList) {
-		renderList = <h1>search not found.</h1>
+		renderList = <h1 className="text-2xl">search not found.</h1>
 	} else {
 		renderList = (
 			<div className='all-products'>
@@ -39,7 +39,7 @@ const SearchPage = ({ match }) => {
 
 	return (
 		<div>
-			<h1>Search Result:</h1>
+			<h1 className="text-2xl">Search Result:</h1>
 			<div>Searching: {searchString}</div>
 			{renderList}
 		</div>

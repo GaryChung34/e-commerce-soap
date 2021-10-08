@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
   font: 1rem Helvetica;
   margin: 0;
@@ -68,12 +73,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
 }
 
 .heading {
   padding-left: 2rem;
-  background-color: white;
 }
 
 
@@ -84,7 +87,6 @@ body {
   justify-content: center;
   align-content: flex-start;
   flex-wrap: wrap;
-  background-color: white;
 }
 
 .link-noDeco {
@@ -120,7 +122,6 @@ body {
 }
 
 .product > div {
-  background-color: white;
   padding: 5px 10px;
 }
 
@@ -270,7 +271,6 @@ body {
 }
 
 .qty-box {
-  background-color: white;
   padding: 10px;
 }
 
@@ -295,7 +295,6 @@ body {
   grid-template-columns: 1fr;
   grid-gap: 10px;
   padding: 10px;
-  background-color: white;
 }
 
 .cartList h2 {
@@ -309,7 +308,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
 }
 
 .cartItem img {
@@ -325,7 +323,7 @@ body {
   border: none;
   color: silver;
   font-size: 1.2rem;
-  background-color: white;
+  /*background-color: white;*/
   text-align: center;
   padding: 5px 0px;
   margin: 0px 30px;

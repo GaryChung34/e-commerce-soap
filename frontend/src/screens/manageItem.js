@@ -85,7 +85,7 @@ const ManageItem = (props) => {
 
 	return (
 		<div>
-			<h1>Manage Item</h1>
+			<h1 className="text-2xl">Manage Item</h1>
 			{notAdminWarn && <h2 style={{color: "red"}}>You are not authorized to edit!</h2>}
 			<button onClick={() => openModel({
 				name: '', star:'', image:'',
