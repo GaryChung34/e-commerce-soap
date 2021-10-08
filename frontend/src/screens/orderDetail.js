@@ -27,9 +27,9 @@ const OrderDetail = ({ match }) => {
 
 	return (
 		<div>
-			<h1 className="text-2xl">OrderDetail</h1>
-			<h2 className="text-xl">Order no.: {orderDetail._id}</h2>
-			<h2 className="text-xl">Shipping Address:</h2>
+			<h1>OrderDetail</h1>
+			<h2>Order no.: {orderDetail._id}</h2>
+			<h2>Shipping Address:</h2>
 			<div>
 			{address.address},&nbsp; 
 			{address.building},&nbsp; 
@@ -42,7 +42,7 @@ const OrderDetail = ({ match }) => {
 				<div className='msgBox-danger'>Have not arrived</div>
 			}
 
-			<h2 className="text-xl">Payment Method:</h2>
+			<h2>Payment Method:</h2>
 			<div>{payment.paymentMethod}</div>
 			{
 				(orderDetail.isPaid)?
@@ -50,10 +50,10 @@ const OrderDetail = ({ match }) => {
 				<div className='msgBox-danger'>Not Paid</div>
 			}
 
-			<h2 className="text-xl">Order Item:</h2>
+			<h2>Order Item:</h2>
 			{cartRender}
 
-			<h2 className="text-xl">Order Summary:</h2>
+			<h2>Order Summary:</h2>
 			<div>Items: ${orderDetail.totalPrice}</div>
 			<div>Delivery fee: ${orderDetail.shippingPrice}</div>
 		</div>

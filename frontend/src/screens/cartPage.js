@@ -34,9 +34,9 @@ const CartPage = (props) => {
 
 	return(
 		<div className='cartList'>
-			<h1 className="text-2xl">Cart: </h1>
+			<h1>Cart: </h1>
 			{cartRender}
-			<h2 className="text-xl">Total:&nbsp;${cartTotalPrice(cartItems, products)}</h2>
+			<h2>Total:&nbsp;${cartTotalPrice(cartItems, products)}</h2>
 			<button onClick={handleCheckout}>Checkout</button>
 		</div>
 	)

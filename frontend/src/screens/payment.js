@@ -36,7 +36,7 @@ const Payment = (props) => {
 
 	return (
 		<div>
-			<h1 className="text-2xl">Payment Method:</h1>
+			<h1>Payment Method:</h1>
 			<CheckoutStep step1 step2 step3 />
 			{emptyWarn && <div style={{color: 'red'}}>There is/are empty field.</div>}
 			<form onSubmit={handleContinue}>

@@ -35,7 +35,7 @@ const ProductDetail = ({ match }) => {
 	if (!productId) {
 		return (
 			<div>
-				<h1 className="text-2xl">Product not found.</h1>
+				<h1>Product not found.</h1>
 			</div>
 		)
 	}

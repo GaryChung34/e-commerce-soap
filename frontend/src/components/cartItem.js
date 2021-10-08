@@ -16,7 +16,7 @@ const CartItem = ({ product, qty }) => {
 		<div className='cartItem'>
 			<div style={{display:'flex', alignItems:'center'}}>
 				<img src={product.image} alt={product.name} />
-				<h2 className="text-xl">
+				<h2>
 					{product.name}
 				</h2>
 			</div>

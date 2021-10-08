@@ -49,7 +49,7 @@ const Shipping = (props) => {
 
 	return (
 		<div>
-			<h1 className="text-2xl">Shipping Detail</h1>
+			<h1>Shipping Detail</h1>
 			<CheckoutStep step1 step2 />
 			{emptyWarn && <div style={{color: 'red'}}>There is/are empty field.</div>}
 			<form onSubmit={handleContinue}>

@@ -38,7 +38,7 @@ const SignIn = (props) => {
 
 	return(
 		<div>
-			<h1 className="text-2xl">Sign-in </h1>
+			<h1>Sign-in </h1>
 			{signInWarn &&
 				<h2 style={{color: "red"}}>Incorrect user name or password!</h2>
 			}
@@ -63,7 +63,7 @@ const SignIn = (props) => {
 					</li>
 				</ul>
 			</form>
-			<h2 className="text-xl">New user? let register!</h2>
+			<h2>New user? let register!</h2>
 			<Link to='/register'>Register</Link>
 		</div>
 	)

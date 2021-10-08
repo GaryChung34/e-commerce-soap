@@ -34,7 +34,7 @@ const Register = (props) => {
 
 	return (
 		<div>
-			<h1 className="text-2xl">Register</h1>
+			<h1>Register</h1>
 			<form onSubmit={handleSubmit}>
 				<ul>
 					<li>

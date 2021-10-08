@@ -55,9 +55,9 @@ const PlaceOrder = (props) => {
 
 	return (
 		<div>
-			<h1 className="text-2xl">Place Order:</h1>
+			<h1>Place Order:</h1>
 			<CheckoutStep step1 step2 step3 step4 />
-			<h2 className="text-xl">Shipping Address:</h2>
+			<h2>Shipping Address:</h2>
 			<div>
 			{shipping.address},&nbsp; 
 			{shipping.building},&nbsp; 
@@ -66,14 +66,14 @@ const PlaceOrder = (props) => {
 			</div>
 			<button onClick={handleAddressEdit}>Edit</button>
 
-			<h2 className="text-xl">Payment Method:</h2>
+			<h2>Payment Method:</h2>
 			<div>{payment.paymentMethod}</div>
 			<button onClick={handlePaymentEdit}>Edit</button>
 
-			<h2 className="text-xl">Order Item:</h2>
+			<h2>Order Item:</h2>
 			{cartRender}
 
-			<h2 className="text-xl">Order Summary:</h2>
+			<h2>Order Summary:</h2>
 			<div>Items: ${totalFee}</div>
 			<div>Delivery fee: ${deliveryFee}</div>
 			<button onClick={handlePlaceOrder}>Purchase Order</button>
