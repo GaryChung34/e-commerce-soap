@@ -37,7 +37,7 @@ const CartPage = (props) => {
 			<h1>Cart: </h1>
 			{cartRender}
 			<h2>Total:&nbsp;${cartTotalPrice(cartItems, products)}</h2>
-			<button onClick={handleCheckout}>Checkout</button>
+			<button className='btn btn-blue' onClick={handleCheckout}>Checkout</button>
 		</div>
 	)
 }

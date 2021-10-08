@@ -79,7 +79,7 @@ const Shipping = (props) => {
 						<input type='text' onChange={(e) => setDistrict(e.target.value)} value={district} />
 					</li>
 					<li>
-						<button type='submit'>Submit</button>
+						<button className='btn btn-blue' type='submit'>Submit</button>
 					</li>
 				</ul>
 			</form>

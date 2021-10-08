@@ -59,7 +59,7 @@ const SignIn = (props) => {
 							onChange={onPasswordChange}/>
 					</li>
 					<li>
-						<button type='submit'>Submit</button>
+						<button className='btn btn-blue' type='submit'>Submit</button>
 					</li>
 				</ul>
 			</form>

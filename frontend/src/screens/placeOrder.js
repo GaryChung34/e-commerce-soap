@@ -76,7 +76,7 @@ const PlaceOrder = (props) => {
 			<h2>Order Summary:</h2>
 			<div>Items: ${totalFee}</div>
 			<div>Delivery fee: ${deliveryFee}</div>
-			<button onClick={handlePlaceOrder}>Purchase Order</button>
+			<button className='btn btn-blue' onClick={handlePlaceOrder}>Purchase Order</button>
 
 		</div>
 	)

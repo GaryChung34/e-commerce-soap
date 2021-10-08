@@ -66,7 +66,7 @@ const Register = (props) => {
 							onChange={(e)=>{setConfirmPW(e.target.value)}} />
 					</li>
 					<li>
-						<button type='submit'>Confirm</button>
+						<button className='btn btn-blue' type='submit'>Confirm</button>
 					</li>
 				</ul>
 			</form>

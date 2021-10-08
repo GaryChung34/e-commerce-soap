@@ -87,7 +87,7 @@ const ManageItem = (props) => {
 		<div>
 			<h1>Manage Item</h1>
 			{notAdminWarn && <h2 style={{color: "red"}}>You are not authorized to edit!</h2>}
-			<button onClick={() => openModel({
+			<button className='btn btn-blue' onClick={() => openModel({
 				name: '', star:'', image:'',
 				price: {origin:'', discount:''}, 
 				ingredients: ['', '', '']})}>
@@ -145,8 +145,8 @@ const ManageItem = (props) => {
 						<li>
 							<input type='text' onChange={(e)=>{setIngredient3(e.target.value)}} value={ingredient3}/>
 						</li>
-						<button type='submit'>{(id)? 'Update' : 'Submit'}</button>
-						<button onClick={() => {setModelVisible(false)}}>Back</button>
+						<button className='btn btn-blue' type='submit'>{(id)? 'Update' : 'Submit'}</button>
+						<button className='btn btn-blue' onClick={() => {setModelVisible(false)}}>Back</button>
 					</ul>
 				</form>
 			}
@@ -168,8 +168,8 @@ const ManageItem = (props) => {
 							<td>{product.price.origin}</td>
 							<td>{product.price.discount}</td>
 							<td>
-								<button onClick={() => openModel(product)}>edit</button>
-								<button onClick={() => handleDelete(product._id)}>delete</button>
+								<button className='btn btn-blue' onClick={() => openModel(product)}>edit</button>
+								<button className='btn btn-blue' onClick={() => handleDelete(product._id)}>delete</button>
 							</td>
 						</tr>
 					))

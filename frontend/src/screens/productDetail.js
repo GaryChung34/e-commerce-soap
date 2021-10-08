@@ -48,15 +48,14 @@ const ProductDetail = ({ match }) => {
 				<Link to='/productsList'>Product</Link>
 				&nbsp;>&nbsp;{product.name}
 			</div>
-			<div style={{backgroundColor:'white', 
-				textAlign:'center', 
-				padding:'1rem 0px'}}>
+			<div style={{textAlign:'center', 
+				padding:'1rem 0px'}}
+				className='bg-gray-50'>
 				<img src={product.image} alt={product.name} 
 					style={{width:'350px', height:'400px',
 						objectFit:'cover'}} />
 			</div>
-			<div style={{backgroundColor:'white',
-				padding:'1rem 2rem'}}>
+			<div style={{padding:'1rem 2rem'}} className='bg-gray-50'>
 				<h1 style={{margin:'10px 0px'}}>{product.name}</h1>
 				<h2 style={{margin:'5px 0px'}}>Body Soap</h2>
 				<div>{showStar(product.star)}</div>
@@ -69,7 +68,7 @@ const ProductDetail = ({ match }) => {
 				<div style={{textAlign:'center', margin:'20px'}}>
 					<div className='qty-container'>
 						<button className='plus-button' onClick={onMinus}>-</button>
-						<div className='qty-box'>{qty}</div>
+						<div className='qty-box bg-gray-50'>{qty}</div>
 						<button className='plus-button' onClick={onPlus}>+</button>
 					</div>
 				</div>

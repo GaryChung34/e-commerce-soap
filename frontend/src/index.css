@@ -14,6 +14,13 @@
   }
 }
 
+.btn {
+	@apply py-2 px-4 font-semibold rounded-lg shadow-md
+}
+
+.btn-blue {
+	@apply text-white bg-blue-500 hover:bg-blue-700;
+}
 
 body {
 	font: 1rem Helvetica;
@@ -240,7 +247,6 @@ body {
 .productAddress {
 	grid-row: 1;
 	grid-column: 1 / span 2;
-	background-color: white;
 	padding: 10px 10px;
 }
 

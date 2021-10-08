@@ -56,7 +56,7 @@ const Payment = (props) => {
 						<label>None</label>
 					</li>
 					<li>
-						<button type='submit'>continue</button>
+						<button className='btn btn-blue' type='submit'>continue</button>
 					</li>
 				</ul>
 			</form>
