@@ -9,7 +9,7 @@ This is my first full stack e-commerce website to sell fine hand-made soap with 
 - search bar
 <p>&nbsp;</p>
 Let's check out my live demo🐋: https://murmuring-wildwood-12135.herokuapp.com/
-<p>Admin User: gary123@gary123.com , PW: password</p>
+<p>Admin User: gary123@gary123.com , PW: passWord123</p>
 
 # Tech Stack
 Front-end:

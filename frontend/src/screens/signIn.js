@@ -49,9 +49,9 @@ const SignIn = (props) => {
 					<h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in for shopping</h2>
 					<p className="mt-2 text-center text-sm text-gray-600">
 						Or{' '}
-						<a href="#" className="font-medium text-blue-600 hover:text-blue-500">
+						<Link to='/register' href="#" className="font-medium text-blue-600 hover:text-blue-500">
 							Register right now!
-						</a>
+						</Link>
 					</p>
 				</div>
 				<form className="mt-8 space-y-6" action="#" method="POST"
